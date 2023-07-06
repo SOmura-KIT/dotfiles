@@ -92,6 +92,7 @@ local telescope = "<C-t>"
 keymap("n", telescope .. "<C-t>",   ":Telescope<CR>",           { noremap = true })
 keymap("n", telescope .. "t",       ":Telescope<CR>",           { noremap = true })
 keymap("n", telescope .. "b",       ":Telescope file_browser<CR>", { noremap = true })
+keymap("n", telescope .. "d",       ":Telescope diagnostics<CR>",{ noremap = true })
 keymap("n", telescope .. "f",       ":Telescope find_files<CR>",{ noremap = true })
 keymap("n", telescope .. "h",       ":Telescope help_tags<CR>", { noremap = true })
 keymap("n", telescope .. "k",       ":Telescope keymaps<CR>",   { noremap = true })
