@@ -206,7 +206,6 @@ return packer.startup(function(use)
     -- Go 開発補助
     use({
         "fatih/vim-go",
-        opt = true,
         ft = { "go" }
     })
 
