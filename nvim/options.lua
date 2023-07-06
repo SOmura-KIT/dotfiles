@@ -61,6 +61,11 @@ local LANGUAGE_OPTIONS = {
         shiftwidth = 2,
         tabstop = 2,
     },
+
+    yaml = {
+        shiftwidth = 2,
+        tabstop = 2,
+    },
 }
 
 local setOptionsByTable = function(options)
