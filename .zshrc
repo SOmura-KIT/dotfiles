@@ -90,7 +90,7 @@ export PATH=$HOME/.local/bin:$PATH
 
 # source
 source ${HOME}/.local/source/cdf.sh
-source ${HOME}/.local/source/kit.sh
+# source ${HOME}/.local/source/kit.sh
 
 # パワーラインPS1
 # grmlが優先される場合、
