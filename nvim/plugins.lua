@@ -206,7 +206,10 @@ return packer.startup(function(use)
     -- Go 開発補助
     use({
         "fatih/vim-go",
-        ft = { "go" }
+        ft = { "go" },
+        setup = function()
+          require("plugins/vim-go")
+        end
     })
 
     -- 起動時間
