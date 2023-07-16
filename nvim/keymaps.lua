@@ -32,10 +32,6 @@ keymap("n", "<C-w>t",       ":vs<CR>:term<CR>",         { noremap = true }) -- m
 keymap("n", "<C-w><C-t>",   ":vs<CR>:term<CR>",         { noremap = true }) -- move top left window
 keymap("n", "<C-w>T",       ":sp<CR><C-w>j:term<CR>",   { noremap = true }) -- move top left window
 
--- tab
-keymap("n", "<C-n>", ":TablineBufferNext<CR>",   { noremap = true })
-keymap("n", "<C-p>", ":TablineBufferPrevious<CR>",   { noremap = true })
-
 -- write and quit
 keymap("n", "<Leader>h",    ":noh<CR>", { noremap = true })
 keymap("n", "<Leader>ww",   ":w<CR>",   { noremap = true })

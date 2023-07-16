@@ -45,14 +45,6 @@ return packer.startup(function(use)
         end
     })
 
-    -- タブ表示
-    use({
-        "kdheepak/tabline.nvim",
-        config = function()
-            require("plugins/tabline")
-        end
-    })
-
     -- bufline
     use({
         "akinsho/bufferline.nvim",
@@ -204,13 +196,7 @@ return packer.startup(function(use)
     })
 
     -- Go 開発補助
-    use({
-        "fatih/vim-go",
-        ft = { "go" },
-        setup = function()
-          require("plugins/vim-go")
-        end
-    })
+    use({"fatih/vim-go"})
 
     -- 起動時間
     use ({
