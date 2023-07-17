@@ -101,7 +101,7 @@ return packer.startup(function(use)
         -- ハイライト
     use({
         "nvim-treesitter/nvim-treesitter",
-        run = ":TSUpdate",
+        run = {":TSUpdate", ":MasonUpdate"},
         config = function()
             require("plugins/treesitter")
         end
