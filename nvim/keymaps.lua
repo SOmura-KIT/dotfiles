@@ -86,14 +86,16 @@ vim.api.nvim_create_autocmd("LspAttach", {
 -- telescope
 local telescope = "<C-t>"
 keymap("n", telescope .. "<C-t>",   ":Telescope<CR>",           { noremap = true })
-keymap("n", telescope .. "t",       ":Telescope<CR>",           { noremap = true })
-keymap("n", telescope .. "b",       ":Telescope file_browser<CR>", { noremap = true })
+keymap("n", telescope .. "b",       ":Telescope buffers<CR>", { noremap = true })
 keymap("n", telescope .. "d",       ":Telescope diagnostics<CR>",{ noremap = true })
-keymap("n", telescope .. "f",       ":Telescope find_files<CR>",{ noremap = true })
+keymap("n", telescope .. "fb",      ":Telescope file_browser<CR>", { noremap = true })
+keymap("n", telescope .. "fo",      ":Telescope oldfiles<CR>", { noremap = true })
+keymap("n", telescope .. "ff",      ":Telescope find_files<CR>",{ noremap = true })
 keymap("n", telescope .. "h",       ":Telescope help_tags<CR>", { noremap = true })
 keymap("n", telescope .. "k",       ":Telescope keymaps<CR>",   { noremap = true })
 keymap("n", telescope .. "n",       ":Telescope notify<CR>",    { noremap = true })
 keymap("n", telescope .. "p",       ":Telescope packer<CR>",    { noremap = true })
+keymap("n", telescope .. "t",       ":Telescope<CR>",           { noremap = true })
 
 -- copilot
 vim.cmd('imap <silent><script><expr> <C-l> copilot#Accept("\\<CR>")')
