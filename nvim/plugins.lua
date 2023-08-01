@@ -63,12 +63,9 @@ return packer.startup(function(use)
 
     -- 補完
     use({
-        "windwp/nvim-autopairs",
-        opt = true,
-        event = "InsertEnter",
-        config = function()
-            require("plugins/nvim-autopairs")
-        end
+      "cohama/lexima.vim",
+      opt = true,
+      event = "InsertEnter",
     })
 
     -- アイコン
