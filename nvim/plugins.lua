@@ -45,14 +45,6 @@ return packer.startup(function(use)
         end
     })
 
-    -- bufline
-    use({
-        "akinsho/bufferline.nvim",
-        config = function()
-            require("plugins/bufferline")
-        end
-    })
-
     -- カラースキーム
     use({
         "EdenEast/nightfox.nvim",
