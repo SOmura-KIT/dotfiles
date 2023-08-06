@@ -87,10 +87,14 @@ bindkey '^N' down-line-or-beginning-search
 
 # path
 export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/.cargo/bin:$PATH
 
 # source
 source ${HOME}/.local/source/cdf.sh
 # source ${HOME}/.local/source/kit.sh
+
+# mocword
+export MOCWORD_DATA=$HOME/.local/mocword.sqlite
 
 # パワーラインPS1
 # grmlが優先される場合、
