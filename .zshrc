@@ -19,9 +19,6 @@ alias ..2='cd ../..'
 alias ..3='cd ../../..'
 alias ..4='cd ../../../..'
 alias ..5='cd ../../../../..'
-alias arduino-compile='arduino-cli cache clear && arduino-cli compile -b arduino:avr:uno'
-alias arduino-upload='arduino-cli upload -b arduino:avr:uno -p /dev/ttyACM0'
-alias arduino-serial='screen /dev/ttyACM0 38400'
 alias cd="cd -P"
 alias grep='grep --color=auto'
 alias h='cd ~'
@@ -33,6 +30,7 @@ alias q='exit'
 alias rm='trash'
 alias v='nvim'
 alias view='nvim -R'
+alias wlanscan='iwctl station wlan0 scan && iwctl station wlan0 get-networks'
 
 # binds
 # zkbd と互換性のあるハッシュテーブルを作成し、
@@ -88,6 +86,7 @@ bindkey '^N' down-line-or-beginning-search
 # path
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
+export PATH=$HOME/leJOS_EV3_0.9.1-beta/bin:$PATH
 
 # source
 source ${HOME}/.local/source/cdf.sh
@@ -107,12 +106,27 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # TMUX
-if which tmux >/dev/null 2>&1; then
-    #if not inside a tmux session, and if no session is started, start a new session
-    test -z "$TMUX" && (tmux attach || tmux new-session)
+if [ ! "$TERM" = "linux" ]; then
+  if which tmux >/dev/null 2>&1; then
+      #if not inside a tmux session, and if no session is started, start a new session
+      test -z "$TMUX" && (tmux attach || tmux new-session)
+  fi
 fi
 
 neofetch
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# XWindowの起動
+if [ "$TERM" = "linux" ]; then
+  echo -n "Start XWindow? [Y/n] (default: Yes): "
+  read ans
+  case "$ans" in
+    [Nn]* )
+      ;;
+    * )
+      startx
+      ;;
+  esac
+fi
