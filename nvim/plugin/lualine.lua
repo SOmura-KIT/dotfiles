@@ -18,11 +18,25 @@ require('lualine').setup {
     }
   },
   sections = {
-    lualine_a = {'mode'},
+    lualine_a = {
+      'mode',
+      -- skkeleton status
+      function()
+        if vim.fn['skkeleton#is_enabled']() then
+          return 'skkeleton: かな'
+        end
+        return 'skkeleton: en  '
+      end,
+    },
     lualine_b = {'branch', 'diff', 'diagnostics'},
     lualine_c = {'filename'},
     lualine_x = {'encoding', 'fileformat', 'filetype'},
-    lualine_y = {'progress'},
+    lualine_y = {
+      -- denops status
+      function()
+        return 'denops: ' .. vim.fn['denops#server#status']()
+      end
+    },
     lualine_z = {'location'}
   },
   inactive_sections = {
