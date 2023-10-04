@@ -9,7 +9,13 @@ require('jetpack.packer').startup(function(use) -- bootstrap
   use { 'neovim/nvim-lspconfig' }
   use { 'williamboman/mason.nvim' }
   use { 'williamboman/mason-lspconfig.nvim' }
-  use { 'folke/neodev.nvim', ft='lua' }
+  use {
+    'folke/neodev.nvim',
+    ft = 'lua',
+    config = function ()
+      require('plugin.lazy.neodev')
+    end
+  }
   use { 'nvim-treesitter/nvim-treesitter', run=':TSUpdate' }
   use { 'cohama/lexima.vim', event='InsertEnter' }
   use { 'nvim-lualine/lualine.nvim' }
