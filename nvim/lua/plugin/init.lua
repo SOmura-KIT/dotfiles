@@ -3,7 +3,10 @@ require('jetpack.packer').startup(function(use) -- bootstrap
   use { 'tani/vim-jetpack' }
 
   -- plugins
-  use { 'vim-denops/denops.vim' }
+  use {
+    'vim-denops/denops.vim',
+    dir = '~/.config/nvim/denops.vim'
+  }
   use { 'nvim-tree/nvim-web-devicons' }
   use { 'EdenEast/nightfox.nvim' }
   use { 'neovim/nvim-lspconfig' }
