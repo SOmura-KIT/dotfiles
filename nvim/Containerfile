@@ -1,4 +1,0 @@
-# denops shared server
-FROM denoland/deno:latest
-
-COPY /denops.vim denops.vim
