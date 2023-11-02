@@ -6,8 +6,9 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 exec --no-startup-id nm-applet
 
-# A alias to refresh i3status
-set $refresh_i3status killall -SIGUSR1 i3status
+# A alias to refresh i3status/i3block
+# set $refresh_i3status killall -SIGUSR1 i3status
+set $refresh_i3status killall -SIGUSR1 i3blocks
 
 # move key
 set $up j
