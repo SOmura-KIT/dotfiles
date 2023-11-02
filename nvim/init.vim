@@ -13,10 +13,10 @@ let g:loaded_getscriptPlugin    = v:true
 let g:loaded_logipat            = v:true
 let g:loaded_matchparen         = v:true
 let g:loaded_man                = v:true
-let g:loaded_netrw              = v:true
-let g:loaded_netrwPlugin        = v:true
-let g:loaded_netrwSettings      = v:true
-let g:loaded_netrwFileHandlers  = v:true
+" let g:loaded_netrw              = v:true
+" let g:loaded_netrwPlugin        = v:true
+" let g:loaded_netrwSettings      = v:true
+" let g:loaded_netrwFileHandlers  = v:true
 
 " プラグインの読み込み
 lua require('plugin')
@@ -54,15 +54,17 @@ nnoremap gk k
 nnoremap <ESC> <C-c>
 nnoremap <C-[> <C-c>
 
-inoremap <C-D> <Del>
-inoremap <C-B> <Left>
-inoremap <C-F> <Right>
+inoremap <C-d> <Del>
+inoremap <C-b> <Left>
+inoremap <C-f> <Right>
 inoremap <C-a> <Home>
 inoremap <C-e> <End>
+inoremap <Right> <C-t>
+inoremap <Left> <C-d>
 
-cnoremap <C-D> <Del>
-cnoremap <C-B> <Left>
-cnoremap <C-F> <Right>
+cnoremap <C-d> <Del>
+cnoremap <C-b> <Left>
+cnoremap <C-f> <Right>
 cnoremap <ESC> <C-c>
 cnoremap <C-[> <C-c>
 cnoremap <C-a> <Home>
