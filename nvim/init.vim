@@ -46,7 +46,7 @@ nnoremap <Space>ww :w<CR>
 nnoremap <Space>qq :q<CR>
 nnoremap <Space>wq :wq<CR>
 nnoremap <C-w>t <C-w>v<Cmd>term<CR>
-nnoremap <C-w>T <C-w>v<Cmd>term<CR>
+nnoremap <C-w>T <C-w>s<C-w>j<Cmd>term<CR>
 nnoremap j gj
 nnoremap k gk
 nnoremap gj j
@@ -76,6 +76,10 @@ vnoremap gj j
 vnoremap gk k
 
 tnoremap <C-[> <C-\><C-n>
+tnoremap <C-w>h <C-\><C-n><C-w>h
+tnoremap <C-w>j <C-\><C-n><C-w>j
+tnoremap <C-w>k <C-\><C-n><C-w>k
+tnoremap <C-w>l <C-\><C-n><C-w>l
 
 " autocmd
 augroup AudoDisableIME
