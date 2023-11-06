@@ -62,24 +62,7 @@ require('jetpack.packer').startup(function(use) -- bootstrap
   use {
     'Shougo/ddu.vim',
     config = function()
-      vim.cmd[[
-        call ddu#custom#patch_global({
-          \   'ui': 'ff',
-          \   'sources': [
-          \     {'name':'file','params':{}}
-          \   ],
-          \   'sourceOptions': {
-          \     '_': {
-          \       'matchers': ['matcher_substring'],
-          \     },
-          \   },
-          \   'kindOptions': {
-          \     'file': {
-          \       'defaultAction': 'open',
-          \     },
-          \   },
-          \ })
-      ]]
+      vim.cmd('source ~/dotfiles/nvim/ddu/main.vim')
     end
   }
   use {
