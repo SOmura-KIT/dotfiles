@@ -6,17 +6,13 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 exec --no-startup-id nm-applet
 
-# A alias to refresh i3status/i3block
-# set $refresh_i3status killall -SIGUSR1 i3status
-set $refresh_i3status killall -SIGUSR1 i3blocks
-
-# move key
+# Vimのキーバインドに合わせる
 set $up j
 set $down k
 set $left h
 set $right l
 
-# default apps
+# デフォルトで使用するターミナルなど
 set $terminal alacritty
 set $filer thunar
 set $browser firefox
@@ -24,32 +20,33 @@ set $browser_private firefox --private-window
 set $mail_client thunderbird
 set $Locker i3lock && sleep 1
 
-# reload the configuration file
+# configのリロード
 bindsym Mod4+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+# i3の画面の再構成
 bindsym Mod4+Shift+r restart
-# exit i3 (logs you out of your X session)
+# i3の終了
 bindsym Mod4+Shift+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
-# audio control
+# 音量操作
 bindsym XF86AudioRaiseVolume exec --no-startup-id wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+ && $refresh_i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle && $refresh_i3status
 
-# app launcher
+# ランチャー
 bindsym Mod4+space exec --no-startup-id dmenu_run
-# close window
+
+# ウィンドウを閉じる
 bindsym Mod4+c kill
 
-# Screenshots
+# スクリーンショット
 bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/$(date)"
 bindsym Mod4+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date)"
 bindsym Shift+Print exec --no-startup-id maim --select "/home/$USER/Pictures/$(date)"
 
-# launch terminal
+# ターミナルの起動
 bindsym Mod4+Return exec --no-startup-id $terminal
-# app shortcuts
+# よく使用するアプリのショートカット
 bindsym Mod4+b exec --no-startup-id $browser
 bindsym Mod4+e exec --no-startup-id $filer
 bindsym Mod4+m exec --no-startup-id $mail_client
@@ -57,21 +54,21 @@ bindsym Mod4+n exec --no-startup-id nordpass
 bindsym Mod4+s exec --no-startup-id slack
 bindsym Mod4+Shift+b exec --no-startup-id $browser_private
 
-# change focus
+# カレントのウィンドウを変更
 bindsym Mod4+$left focus left
 bindsym Mod4+$down focus down
 bindsym Mod4+$up focus up
 bindsym Mod4+$right focus right
-# change focus between tiling / floating windows
+# タイリングとフローティングの切り替え
 bindsym Mod4+semicolon focus mode_toggle
 
-# move focused window
+# カレントのウィンドウを切り替え
 bindsym Mod4+Shift+$left move left
 bindsym Mod4+Shift+$down move down
 bindsym Mod4+Shift+$up move up
 bindsym Mod4+Shift+$right move right
 
-# split window
+# 画面の分割
 set $split_window Split (s) Horizontal, (v) Vertical (t) Toggle
 mode "$split_window" {
   bindsym s split h, mode "default"
@@ -84,10 +81,10 @@ mode "$split_window" {
 }
 bindsym Mod4+Shift+s mode "$split_window"
 
-# enter fullscreen mode for the focused container
+# フルスクリーンの切り替え
 bindsym Mod4+f fullscreen toggle
 
-# change container layout 
+# スタックとタブの切り替え
 set $window_layout Layout (s) Stacking, (t) Tabbed
 mode "$window_layout" {
   bindsym s layout stacking, mode "default"
@@ -99,10 +96,10 @@ mode "$window_layout" {
 }
 bindsym Mod4+Shift+w mode "$window_layout"
 
-# toggle tiling / floating
+# タイリングとフローティングの切り替え
 bindsym Mod4+v floating toggle
 
-# scratchpad
+# スクラッチパッド
 set $scratchpad Scratchpad (m) Move (s) Show
 mode "$scratchpad" {
   bindsym m move scratchpad, mode "default"
@@ -114,7 +111,7 @@ mode "$scratchpad" {
 }
 bindsym Mod4+Shift+minus mode "$scratchpad"
 
-# system, power actions
+# 電源管理
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
     bindsym l exec --no-startup-id $Locker, mode "default"
@@ -130,9 +127,7 @@ mode "$mode_system" {
 }
 bindsym Mod4+Shift+Delete mode "$mode_system"
 
-
-# Define names for default workspaces for which we configure key bindings later on.
-# We use variables to avoid repeating the names in multiple places.
+# ワークスペース変数
 set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3"
@@ -144,7 +139,7 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
-# switch to workspace
+# ワークスペースの切り替え
 bindsym Mod4+1 workspace number $ws1
 bindsym Mod4+2 workspace number $ws2
 bindsym Mod4+3 workspace number $ws3
@@ -156,7 +151,7 @@ bindsym Mod4+8 workspace number $ws8
 bindsym Mod4+9 workspace number $ws9
 bindsym Mod4+0 workspace number $ws10
 
-# move focused container to workspace
+# ウィンドウを別のワークスペースへ移動
 bindsym Mod4+Shift+1 move container to workspace number $ws1
 bindsym Mod4+Shift+2 move container to workspace number $ws2
 bindsym Mod4+Shift+3 move container to workspace number $ws3
@@ -169,14 +164,14 @@ bindsym Mod4+Shift+9 move container to workspace number $ws9
 bindsym Mod4+Shift+0 move container to workspace number $ws10
 
 
-# resize window (you can also use the mouse for that)
+# ウィンドウサイズの変更
 mode "resize" {
   bindsym $left       resize shrink width 10 px or 10 ppt
   bindsym $down       resize grow height 10 px or 10 ppt
   bindsym $up         resize shrink height 10 px or 10 ppt
   bindsym $right      resize grow width 10 px or 10 ppt
 
-  # same bindings, but for the arrow keys
+  # 十字キー
   bindsym Left        resize shrink width 10 px or 10 ppt
   bindsym Down        resize grow height 10 px or 10 ppt
   bindsym Up          resize shrink height 10 px or 10 ppt
@@ -189,19 +184,28 @@ mode "resize" {
 }
 bindsym Mod4+r mode "resize"
 
-# Auto start
-exec --no-startup-id fcitx5
-exec --no-startup-id xrandr --output eDP-1 --mode 1920x1080
-exec --no-startup-id /usr/bin/setxkbmap -option 'ctrl:nocaps'
+# 起動時起動
 exec --no-startup-id alacritty
 exec --no-startup-id firefox
 exec --no-startup-id thunderbird
 exec --no-startup-id kdeconnect-app
 
-# bar
+# CapsLockをCtrlに置き換え
+exec --no-startup-id /usr/bin/setxkbmap -option 'ctrl:nocaps'
+
+# 入力メソッド
+exec --no-startup-id fcitx5
+
+# 画面の縦横比の設定
+exec --no-startup-id xrandr --output eDP-1 --mode 1920x1080
+
+# picom
+exec --no-startup-id picom -b
+
+# ステータスバー
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
-# default workspace
+# 起動時のデフォルトのワークスペース
 assign [class="Alacritty"] $ws1
 assign [class="firefox"] $ws2
 assign [class="thunderbird"] $ws3
@@ -209,6 +213,6 @@ assign [class="Slack"] $ws4
 assign [class="kdeconnect"] $ws9
 for_window [class="NordPass"] move to workspace $ws10
 
-# use Mouse+Mod4 to drag floating windows to their wanted position
+# マウスでのフローティングウィンドウの移動
 floating_modifier Mod4
 tiling_drag modifier titlebar
