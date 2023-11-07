@@ -197,7 +197,7 @@ exec --no-startup-id /usr/bin/setxkbmap -option 'ctrl:nocaps'
 exec --no-startup-id fcitx5
 
 # 画面の縦横比の設定
-exec --no-startup-id xrandr --output eDP-1 --mode 1920x1080
+exec --no-startup-id xrandr --output eDP-1 --mode 1920x1200
 
 # picom
 exec --no-startup-id picom -b
