@@ -213,6 +213,12 @@ assign [class="Slack"] $ws4
 assign [class="kdeconnect"] $ws9
 for_window [class="NordPass"] move to workspace $ws10
 
+gaps top 40
+gaps bottom 5
+gaps right 5
+gaps left 5
+gaps inner 5
+
 # マウスでのフローティングウィンドウの移動
 floating_modifier Mod4
 tiling_drag modifier titlebar
