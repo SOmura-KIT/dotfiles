@@ -40,6 +40,8 @@ call ddu#custom#patch_local('file_recursive', #{
       \ }})
 function! FileRecursiveKeymaps() abort
   nnoremap <buffer> <silent> q <Cmd>call ddu#ui#ff#do_action('quit')<CR>
+  nnoremap <buffer> <silent> <Esc> <Cmd>call ddu#ui#ff#do_action('quit')<CR>
+  nnoremap <buffer> <silent> <C-[> <Cmd>call ddu#ui#ff#do_action('quit')<CR>
   nnoremap <buffer> <silent> <CR> <Cmd>call ddu#ui#ff#do_action('itemAction')<CR>
   nnoremap <buffer> <silent> f <Cmd>call ddu#ui#ff#do_action('openFilterWindow')<CR>
   nnoremap <buffer> <silent> p <Cmd>call ddu#ui#ff#do_action('togglePreview')<CR>
@@ -47,6 +49,8 @@ endfunction
 function! FileRecursiveFilterKeymaps() abort
   nnoremap <buffer> <silent> <CR> <Cmd>close<CR>
   inoremap <buffer> <silent> <CR> <Esc><Cmd>close<CR>
+  inoremap <buffer> <silent> <Esc> <Esc><Cmd>close<CR>
+  inoremap <buffer> <silent> <C-[> <Esc><Cmd>close<CR>
 endfunction
 augroup dduFileRecursive
   autocmd!
