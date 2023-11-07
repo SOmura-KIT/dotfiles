@@ -3,10 +3,7 @@ require('jetpack.packer').startup(function(use) -- bootstrap
   use { 'tani/vim-jetpack' }
 
   -- plugins
-  use {
-    'vim-denops/denops.vim',
-    dir = '~/.config/nvim/denops.vim'
-  }
+  use { 'vim-denops/denops.vim' }
   use { 'nvim-tree/nvim-web-devicons' }
   use { 'EdenEast/nightfox.nvim' }
   use { 'neovim/nvim-lspconfig' }
@@ -70,7 +67,7 @@ require('jetpack.packer').startup(function(use) -- bootstrap
     before = 'ddu.vim'
   }
   use {
-    'Shougo/ddu-source-file',
+    'Shougo/ddu-source-file_rec',
     before = 'ddu.vim'
   }
   use {
