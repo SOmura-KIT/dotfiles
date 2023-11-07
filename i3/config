@@ -198,6 +198,9 @@ exec --no-startup-id firefox
 exec --no-startup-id thunderbird
 exec --no-startup-id kdeconnect-app
 
+# bar
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
 # default workspace
 assign [class="Alacritty"] $ws1
 assign [class="firefox"] $ws2
@@ -209,10 +212,3 @@ for_window [class="NordPass"] move to workspace $ws10
 # use Mouse+Mod4 to drag floating windows to their wanted position
 floating_modifier Mod4
 tiling_drag modifier titlebar
-
-bar {
-  status_command i3blocks
-  #status_command i3status
-  workspace_buttons yes
-  position top
-}
