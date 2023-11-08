@@ -42,9 +42,7 @@ set wrap
 set writebackup
 
 " キーマッピング
-nnoremap <Space>ww :w<CR>
-nnoremap <Space>qq :q<CR>
-nnoremap <Space>wq :wq<CR>
+nnoremap <Space>w :w<CR>
 nnoremap <C-w>t <C-w>v<Cmd>term<CR>
 nnoremap <C-w>T <C-w>s<C-w>j<Cmd>term<CR>
 nnoremap j gj
