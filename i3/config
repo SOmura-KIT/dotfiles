@@ -203,7 +203,7 @@ exec --no-startup-id xrandr --output eDP-1 --mode 1920x1200
 exec --no-startup-id picom -b
 
 # ステータスバー
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh --docky
 
 # 起動時のデフォルトのワークスペース
 assign [class="Alacritty"] $ws1
@@ -213,7 +213,7 @@ assign [class="Slack"] $ws4
 assign [class="kdeconnect"] $ws9
 for_window [class="NordPass"] move to workspace $ws10
 
-gaps top 40
+gaps top 63
 gaps bottom 5
 gaps right 5
 gaps left 5
