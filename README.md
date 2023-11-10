@@ -8,6 +8,9 @@
 ### Polybar
 * adi1090x/polybar-themesを使用
 
+### alacritty
+* alacritty/alacritty-themesを使用
+
 ## ToDo
 ### Neovim
 * dppへの移行
