@@ -71,6 +71,10 @@ require('jetpack.packer').startup(function(use) -- bootstrap
     before = 'ddu.vim'
   }
   use {
+    'Shougo/ddu-kind-file',
+    before = 'ddu.vim'
+  }
+  use {
     'Shougo/ddu-filter-matcher_substring',
     before = 'ddu.vim'
   }

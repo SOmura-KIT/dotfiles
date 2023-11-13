@@ -57,3 +57,5 @@ augroup dduFileRecursive
   autocmd FileType ddu-ff call FileRecursiveKeymaps()
   autocmd FileType ddu-ff-filter call FileRecursiveFilterKeymaps()
 augroup END
+
+nnoremap <silent> <C-j>f <Cmd>call ddu#start(#{name: "file_recursive"})<CR>
