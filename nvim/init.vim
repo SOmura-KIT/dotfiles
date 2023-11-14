@@ -83,7 +83,12 @@ tnoremap <C-w>l <C-\><C-n><C-w>l
 " autocmd
 augroup AudoDisableIME
   autocmd!
-  autocmd insertLeave * silent! :!fcitx5-remote -c
+  autocmd InsertLeave * silent! :!fcitx5-remote -c
+augroup END
+augroup ToggleRelativeNumber
+  autocmd!
+  autocmd CmdlineEnter * set norelativenumber | redraw
+  autocmd CmdlineLeave * set relativenumber
 augroup END
 
 " カラースキーム
