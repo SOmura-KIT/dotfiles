@@ -9,19 +9,16 @@ require('jetpack.packer').startup(function(use) -- bootstrap
   use { 'neovim/nvim-lspconfig' }
   use { 'williamboman/mason.nvim' }
   use { 'williamboman/mason-lspconfig.nvim' }
-  use {
-    'folke/neodev.nvim',
-    ft = 'lua',
-    config = function ()
-      require('plugin.lazy.neodev')
-    end
-  }
   use { 'nvim-treesitter/nvim-treesitter', run=':TSUpdate' }
   use { 'cohama/lexima.vim', event='InsertEnter' }
   use { 'nvim-lualine/lualine.nvim' }
+  use { 'lambdalisue/gin.vim' }
 
   -- lazy
-  use { 'dstein64/vim-startuptime', cmd='StartupTime' }
+  use {
+    'dstein64/vim-startuptime',
+    cmd = 'StartupTime'
+  }
   use {
     'nvim-tree/nvim-tree.lua',
     cmd = {
@@ -36,7 +33,18 @@ require('jetpack.packer').startup(function(use) -- bootstrap
   }
 
   -- ft
-  use { 'fatih/vim-go', ft='go', run=':GoUpdateBinaries' }
+  use {
+    'fatih/vim-go',
+    ft = 'go',
+    run = ':GoUpdateBinaries'
+  }
+  use {
+    'folke/neodev.nvim',
+    ft = 'lua',
+    config = function ()
+      require('plugin.lazy.neodev')
+    end
+  }
 
   --ddc
   use {
