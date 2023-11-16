@@ -1,0 +1,5 @@
+!_TAG_FILE_ENCODING	utf-8	//
+my-help-tag	my-helpfile.txt	/*my-help-tag*
+my-helpfile.txt	my-helpfile.txt	/*my-helpfile.txt*
+my-reference-tag	my-helpfile.txt	/*my-reference-tag*
+タグ名\	my-helpfile.txt	/*タグ名\\*
