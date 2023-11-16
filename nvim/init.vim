@@ -42,12 +42,27 @@ set updatetime=300
 set wrap
 set writebackup
 
+" キーマップ関係の関数
+function! CustomJ() abort
+  if v:count1 == 1
+    return 'gj'
+  endif
+  return 'j'
+endfunction
+
+function! CustomK() abort
+  if v:count1 == 1
+    return 'gk'
+  endif
+  return 'k'
+endfunction
+
 " キーマッピング
 nnoremap <Space>w :w<CR>
 nnoremap <C-w>t <C-w>v<Cmd>term<CR>
 nnoremap <C-w>T <C-w>s<C-w>j<Cmd>term<CR>
-nnoremap j gj
-nnoremap k gk
+nnoremap <expr> j CustomJ()
+nnoremap <expr> k CustomK()
 nnoremap gj j
 nnoremap gk k
 nnoremap <ESC> <C-c>
@@ -69,8 +84,8 @@ cnoremap <C-[> <C-c>
 cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
 
-vnoremap j gj
-vnoremap k gk
+vnoremap <expr> j CustomJ()
+vnoremap <expr> k CustomK()
 vnoremap gj j
 vnoremap gk k
 
