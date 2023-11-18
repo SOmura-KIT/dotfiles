@@ -29,6 +29,7 @@ set nobackup
 set cursorcolumn
 set cursorline
 set expandtab
+set helplang=ja,en
 set hlsearch
 set mouse=
 set number
@@ -58,7 +59,7 @@ function! CustomK() abort
 endfunction
 
 " キーマッピング
-nnoremap <Space>w :w<CR>
+nnoremap <Space>w <Cmd>w<CR>
 nnoremap <C-w>t <C-w>v<Cmd>term<CR>
 nnoremap <C-w>T <C-w>s<C-w>j<Cmd>term<CR>
 nnoremap <expr> j CustomJ()
@@ -102,8 +103,12 @@ augroup AudoDisableIME
 augroup END
 augroup ToggleRelativeNumber
   autocmd!
-  autocmd CmdlineEnter * set norelativenumber | redraw
-  autocmd CmdlineLeave * set relativenumber
+  autocmd CmdlineEnter * if &number |
+        \ set norelativenumber | redraw |
+        \ endif
+  autocmd CmdlineLeave * if &number |
+        \ set relativenumber |
+        \ endif
 augroup END
 
 " カラースキーム
