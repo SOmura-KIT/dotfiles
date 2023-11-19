@@ -11,7 +11,7 @@
 タグ   							*my-help-tag*
 *タグ名\*
 
-参照先タグ                                              *my-reference-tag*
+参照先タグ                                                  *my-reference-tag*
 |参照先のタグ名\|
 |my-help-tag| <- で<C-]>すると上記の'my-help-tag'に移動する。
 
