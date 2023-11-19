@@ -11,7 +11,8 @@ let g:loaded_vimballPlugin      = v:true
 let g:loaded_getscript          = v:true
 let g:loaded_getscriptPlugin    = v:true
 let g:loaded_logipat            = v:true
-let g:loaded_matchparen         = v:true
+" 対応括弧のハイライト
+" let g:loaded_matchparen         = v:true
 let g:loaded_man                = v:true
 " リモートのファイル編集で欲しいため無効化しない
 " let g:loaded_netrw              = v:true
