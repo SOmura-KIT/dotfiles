@@ -52,7 +52,11 @@ require('jetpack.packer').startup(function(use) -- bootstrap
     'Shougo/ddc.vim',
     event = 'InsertEnter',
     config = function()
-      vim.cmd('source ~/dotfiles/nvim/ddc/main.vim')
+      require("ddc_nvim_lsp_setup").setup()
+      require("lspconfig").denols.setup({})
+
+      vim.cmd('call ddc#custom#load_config(expand("~/.config/nvim/plugin/ddc/main.ts"))')
+      vim.fn['ddc#enable']()
     end
   }
   use { 'Shougo/pum.vim', before='ddc.vim' }
