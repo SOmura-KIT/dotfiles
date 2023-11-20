@@ -27,7 +27,8 @@ export class Config extends BaseConfig {
       sourceOptions: {
         _: {
           maxItems: 10,
-          minAutoCompleteLength: 1,
+          // skkeletonでの日本語変換前の候補表示を防止
+          minAutoCompleteLength: 3,
           matchers: ['matcher_fuzzy'],
           sorters: ['sorter_fuzzy'],
           converters: ['converter_fuzzy'],
