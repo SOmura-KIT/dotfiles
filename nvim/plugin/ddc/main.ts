@@ -44,6 +44,7 @@ export class Config extends BaseConfig {
           mark: '[SKK]',
           matchers: ['skkeleton'],
           sorters: [],
+          minAutoCompleteLength: 1,
           isVolatile: true,
         },
         around: {
