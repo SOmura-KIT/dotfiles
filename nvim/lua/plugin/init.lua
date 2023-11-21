@@ -54,7 +54,9 @@ require('jetpack.packer').startup(function(use) -- bootstrap
     config = function()
       require("ddc_nvim_lsp_setup").setup()
       require('lsp')
-      require('plugin.lazy.neodev')
+      if vim.o['filetype'] == 'lua' then
+        require('plugin.lazy.neodev')
+      end
       vim.cmd('call ddc#custom#load_config(expand("~/.config/nvim/plugin/ddc/main.ts"))')
       vim.fn['ddc#enable']()
     end
