@@ -11,11 +11,17 @@
 ### alacritty
 * alacritty/alacritty-themesを使用
 
+## 継続
+### Neovim
+* latexとかのチートシートとかをhelpfileで作成
+* ddu関係を充実させる
+
 ## ToDo
 ### Neovim
 * [ ] dppへの移行
 * [ ] j, kでの移動カーソルが下から3, 4行目くらいになるようにする
 * [x] <数字>j, kのときのgj gkへのマップの無効化
 * [x] Git関係のプラグインを何か導入(候補: Gin)
-* [ ] ddc, dduのTypeScript移行
-* [ ] ddu関係を充実させる
+* [x] ddcのTypeScript移行
+* [ ] ddcでnvim-lspが想定通り動作しない問題の修正
+* [ ] dduのTypeScript移行
