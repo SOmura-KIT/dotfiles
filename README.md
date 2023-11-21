@@ -16,6 +16,10 @@
 * latexとかのチートシートとかをhelpfileで作成
 * ddu関係を充実させる
 
+## 問題
+### Neovim
+* ddc-source-nvim-lspを読み込んだ後にlspのsetupメソッドを読み込まないといけない。LSPの有効化のタイミングをどのタイミングにするか。
+
 ## ToDo
 ### Neovim
 * [ ] dppへの移行
