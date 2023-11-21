@@ -43,7 +43,7 @@ require('jetpack.packer').startup(function(use) -- bootstrap
     'folke/neodev.nvim',
     ft = 'lua',
     config = function ()
-      require('plugin.lazy.neodev')
+      require('lsp')
     end
   }
 
@@ -53,8 +53,8 @@ require('jetpack.packer').startup(function(use) -- bootstrap
     event = 'InsertEnter',
     config = function()
       require("ddc_nvim_lsp_setup").setup()
-      require("lspconfig").denols.setup({})
-
+      require('lsp')
+      require('plugin.lazy.neodev')
       vim.cmd('call ddc#custom#load_config(expand("~/.config/nvim/plugin/ddc/main.ts"))')
       vim.fn['ddc#enable']()
     end
@@ -62,7 +62,12 @@ require('jetpack.packer').startup(function(use) -- bootstrap
   use { 'Shougo/pum.vim', before='ddc.vim' }
   use { 'vim-skk/skkeleton' }
   use { 'hrsh7th/vim-vsnip', before='ddc.vim' }
-  use { 'uga-rosa/ddc-nvim-lsp-setup', before='ddc.vim' }
+  use {
+    'uga-rosa/ddc-nvim-lsp-setup',
+    before='ddc.vim',
+    config = function()
+    end
+  }
   use { 'Shougo/ddc-ui-pum', before='ddc.vim' }
   use { 'Shougo/ddc-source-nvim-lsp', before='ddc.vim' }
   use { 'Shougo/ddc-source-around', before='ddc.vim' }
