@@ -48,7 +48,7 @@ export class Config extends BaseConfig {
           isVolatile: true,
         },
         around: {
-          'mark': '[A]'
+          'mark': '[A]',
         },
       },
       sourceParams: {
