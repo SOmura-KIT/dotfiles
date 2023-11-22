@@ -11,7 +11,7 @@ require('jetpack.packer').startup(function(use) -- bootstrap
   use { 'williamboman/mason.nvim' }
   use { 'williamboman/mason-lspconfig.nvim' }
   use { 'nvim-treesitter/nvim-treesitter', run=':TSUpdate' }
-  use { 'cohama/lexima.vim', event='InsertEnter' }
+  use { 'cohama/lexima.vim', --[[event='InsertEnter']] }
   use { 'nvim-lualine/lualine.nvim' }
   use { 'lambdalisue/gin.vim' }
 
