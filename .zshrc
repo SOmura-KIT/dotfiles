@@ -84,6 +84,7 @@ bindkey '^P' up-line-or-beginning-search
 bindkey '^N' down-line-or-beginning-search
 
 # path
+export PATH=$HOME/.local/nvim/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$HOME/leJOS_EV3_0.9.1-beta/bin:$PATH
