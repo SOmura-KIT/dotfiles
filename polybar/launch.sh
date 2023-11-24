@@ -17,7 +17,11 @@ launch_bar() {
 	elif [[ "$style" == "pwidgets" ]]; then
 		bash "$dir"/pwidgets/launch.sh --main
 	else
-		polybar -q main -c "$dir/$style/config.ini" &	
+    if type 'xrandr'; then
+      for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
+        MONITOR=$m polybar -q main -c "$dir/$style/config.ini" &	
+      done
+    fi
 	fi
 }
 
