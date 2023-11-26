@@ -34,23 +34,30 @@ export class Config extends BaseConfig {
     const [context, options] = await args.contextBuilder.get(args.denops);
 
     // Load toml plugins
+    const tomlPathes = [
+      "~/.config/nvim/dpp/tomls/dpp.toml",
+      "~/.config/nvim/dpp/tomls/general.toml",
+    ];
+
     const tomls: Toml[] = [];
-    const toml = await args.dpp.extAction(
-      args.denops,
-      context,
-      options,
-      "toml",
-      "load",
-      {
-        path: "~/.config/nvim/dpp/tomls/dpp.toml",
-        options: {
-          lazy: false,
+    for (const aTomlPath of tomlPathes) {
+      const toml = await args.dpp.extAction(
+        args.denops,
+        context,
+        options,
+        "toml",
+        "load",
+        {
+          path: aTomlPath,
+          options: {
+            lazy: false,
+          },
         },
-      },
-    // ) as Toml | undefined;
-    ) as Toml;
-    if (toml) {
-      tomls.push(toml);
+      // ) as Toml | undefined;
+      ) as Toml;
+      if (toml) {
+        tomls.push(toml);
+      }
     }
 
     // Merge toml results

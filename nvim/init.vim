@@ -1,7 +1,11 @@
 set nocompatible
 
-const s:dpp_base = '~/.cache/dpp/'
+const s:dpp_base = '~/.cache/dpp'
 call g:git#use('https://github.com/Shougo/dpp.vim')
+call g:git#use('https://github.com/Shougo/dpp-ext-toml')
+call g:git#use('https://github.com/Shougo/dpp-ext-lazy')
+call g:git#use('https://github.com/Shougo/dpp-ext-installer')
+call g:git#use('https://github.com/Shougo/dpp-protocol-git')
 const s:dpp_config = '~/.config/nvim/dpp/config.ts'
 
 if dpp#min#load_state(s:dpp_base)
@@ -12,3 +16,11 @@ endif
 "-----
 " オプション
 source ~/.config/nvim/options.vim
+
+function! TestRuntimepaths() abort
+  let l:runtimepath = &runtimepath
+  let l:splited = split(l:runtimepath, ',')
+  for l:aRuntimepath in l:splited
+    echo l:aRuntimepath
+  endfor
+endfunction

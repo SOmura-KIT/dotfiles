@@ -1,7 +1,4 @@
 [[plugins]]
-repo = 'vim-denops/denops.vim'
-
-[[plugins]]
 repo = 'Shougo/dpp.vim'
 hook_add = '''
 command! DppRemakeState if denops#server#status() == 'running' | call dpp#make_state() | endif
@@ -23,8 +20,3 @@ repo = 'Shougo/dpp-ext-toml'
 [[plugins]]
 repo = 'Shougo/dpp-ext-lazy'
 
-[[plugins]]
-repo = 'vim-jp/vimdoc-ja'
-
-[[plugins]]
-repo = 'neovim/nvim-lspconfig'
