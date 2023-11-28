@@ -61,7 +61,15 @@ require('jetpack.packer').startup(function(use) -- bootstrap
       vim.fn['ddc#enable']()
     end
   }
-  use { 'Shougo/pum.vim', before='ddc.vim' }
+  use {
+    'Shougo/pum.vim',
+    before='ddc.vim',
+    config = function()
+      vim.cmd('inoremap <C-n> <Cmd>call pum#map#insert_relative(+1)<CR>')
+      vim.cmd('inoremap <C-i> <Cmd>call pum#map#insert_relative(+1)<CR>')
+      vim.cmd('inoremap <C-p> <Cmd>call pum#map#insert_relative(-1)<CR>')
+    end
+  }
   use { 'vim-skk/skkeleton' }
   use { 'hrsh7th/vim-vsnip', before='ddc.vim' }
   use {
@@ -99,3 +107,4 @@ require('jetpack.packer').startup(function(use) -- bootstrap
     before = 'ddu.vim'
   }
 end)
+
