@@ -37,7 +37,7 @@ export class Config extends BaseConfig {
     const tomlDir = "~/.config/nvim/dpp/tomls/";
     const tomlFilenames = [
       "dpp.toml",
-      "general.toml",
+      "plug.toml",
       "ddc.toml",
     ];
 
