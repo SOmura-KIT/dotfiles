@@ -16,11 +16,3 @@ endif
 "-----
 " オプション
 source ~/.config/nvim/options.vim
-
-function! TestRuntimepaths() abort
-  let l:runtimepath = &runtimepath
-  let l:splited = split(l:runtimepath, ',')
-  for l:aRuntimepath in l:splited
-    echo l:aRuntimepath
-  endfor
-endfunction
