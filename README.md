@@ -18,11 +18,11 @@
 
 ## 問題
 ### Neovim
-* ddc-source-nvim-lspを読み込んだ後にlspのsetupメソッドを読み込まないといけない。LSPの有効化のタイミングをどのタイミングにするか。
+* ddc-source-nvim-lsp-setupを読み込んだ後にlspのsetupメソッドを読み込まないといけない。LSPの有効化のタイミングをどのタイミングにするか。
 
 ## ToDo
 ### Neovim
-* [ ] dppへの移行
+* [x] dppへの移行
 * [ ] j, kでの移動カーソルが下から3, 4行目くらいになるようにする
 * [x] <数字>j, kのときのgj gkへのマップの無効化
 * [x] Git関係のプラグインを何か導入(候補: Gin)
