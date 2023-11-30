@@ -1,4 +1,22 @@
 [[plugins]]
+repo = 'Shougo/ddc.vim'
+hook_add='''
+autocmd CmdlineEnter,InsertEnter * ++once source ~/.config/nvim/config/ddc.vim
+'''
+
+[[plugins]]
+repo = 'Shougo/pum.vim'
+hook_add='''
+inoremap <C-n>   <Cmd>call pum#map#insert_relative(+1)<CR>
+inoremap <C-p>   <Cmd>call pum#map#insert_relative(-1)<CR>
+inoremap <C-y>   <Cmd>call pum#map#confirm()<CR>
+inoremap <C-e>   <Cmd>call pum#map#cancel()<CR>
+'''
+
+[[plugins]]
+repo = 'Shougo/ddc-ui-pum'
+
+[[plugins]]
 repo = 'vim-skk/skkeleton'
 hook_add='''
 imap <C-j> <Plug>(skkeleton-enable)
