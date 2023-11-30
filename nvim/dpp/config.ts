@@ -38,6 +38,7 @@ export class Config extends BaseConfig {
     const tomlFilenames = [
       "dpp.toml",
       "plug.toml",
+      "plug_lazy.toml",
       "ddc.toml",
     ];
 

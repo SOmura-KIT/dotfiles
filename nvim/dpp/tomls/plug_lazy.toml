@@ -1,0 +1,2 @@
+[[plugins]]
+repo = 'dstein64/vim-startuptime'
