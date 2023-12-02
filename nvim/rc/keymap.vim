@@ -1,25 +1,4 @@
-" オプション
-set noautoindent
-set autoread
-set nobackup
-set cursorcolumn
-set cursorline
-set expandtab
-set helplang=ja,en
-set hlsearch
-set mouse=
-set number
-set relativenumber
-set ruler
-set shiftwidth=2
-set showcmd
-set splitright
-set tabstop=2
-set updatetime=300
-set wrap
-set writebackup
 
-" キーマップ関係の関数
 function! CustomJ() abort
   if v:count1 == 1
     return 'gj'
@@ -34,7 +13,6 @@ function! CustomK() abort
   return 'k'
 endfunction
 
-" キーマッピング
 nnoremap <Space>w <Cmd>w<CR>
 nnoremap <C-w>t <C-w>v<Cmd>term<CR>
 nnoremap <C-w>T <C-w>s<C-w>j<Cmd>term<CR>
@@ -71,19 +49,3 @@ tnoremap <C-w>h <C-\><C-n><C-w>h
 tnoremap <C-w>j <C-\><C-n><C-w>j
 tnoremap <C-w>k <C-\><C-n><C-w>k
 tnoremap <C-w>l <C-\><C-n><C-w>l
-
-" autocmd
-augroup AudoDisableIME
-  autocmd!
-  autocmd InsertLeave * silent! :!fcitx5-remote -c
-augroup END
-augroup ToggleRelativeNumber
-  autocmd!
-  autocmd CmdlineEnter * if &number |
-        \ set norelativenumber | redraw |
-        \ endif
-  autocmd CmdlineLeave * if &number |
-        \ set relativenumber |
-        \ endif
-augroup END
-

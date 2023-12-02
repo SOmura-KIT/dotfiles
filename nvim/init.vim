@@ -13,6 +13,5 @@ if dpp#min#load_state(s:dpp_base)
   autocmd User DenopsReady call dpp#make_state(s:dpp_base, s:dpp_config)
 endif
 
-"-----
-" オプション
-source ~/.config/nvim/options.vim
+"--------------------
+source ~/.config/nvim/rc/init.vim
