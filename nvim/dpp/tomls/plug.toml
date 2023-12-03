@@ -9,3 +9,6 @@ repo = 'neovim/nvim-lspconfig'
 
 [[plugins]]
 repo = 'nvim-treesitter/nvim-treesitter'
+
+[[plugins]]
+repo = 'lambdalisue/gin.vim'
