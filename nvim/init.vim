@@ -1,4 +1,6 @@
-set nocompatible
+if &compatible
+  set nocompatible
+endif
 
 const s:dpp_base = '~/.cache/dpp'
 call g:git#use('https://github.com/Shougo/dpp.vim')
