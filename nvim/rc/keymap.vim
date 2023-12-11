@@ -1,23 +1,8 @@
-
-function! CustomJ() abort
-  if v:count1 == 1
-    return 'gj'
-  endif
-  return 'j'
-endfunction
-
-function! CustomK() abort
-  if v:count1 == 1
-    return 'gk'
-  endif
-  return 'k'
-endfunction
-
 nnoremap <Space>w <Cmd>w<CR>
 nnoremap <C-w>t <C-w>v<Cmd>term<CR>
 nnoremap <C-w>T <C-w>s<C-w>j<Cmd>term<CR>
-nnoremap <expr> j CustomJ()
-nnoremap <expr> k CustomK()
+nnoremap <expr> j key_func#customJ()
+nnoremap <expr> k key_func#customK()
 nnoremap gj j
 nnoremap gk k
 nnoremap <ESC> <C-c>
@@ -39,8 +24,8 @@ cnoremap <C-[> <C-c>
 cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
 
-vnoremap <expr> j CustomJ()
-vnoremap <expr> k CustomK()
+vnoremap <expr> j key_func#customJ()
+vnoremap <expr> k key_func#customK()
 vnoremap gj j
 vnoremap gk k
 

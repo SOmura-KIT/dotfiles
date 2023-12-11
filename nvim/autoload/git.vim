@@ -1,9 +1,8 @@
 " github.com/kuuote/autoload/vimrc/git.vimが参考
-function! g:git#use(repo) abort
-  let l:home = getenv('HOME')
-  let l:path = l:home .. '/.cache/dpp/repos/' .. a:repo->substitute('.*://', '', '')
-  if !isdirectory(l:path)
-    execute printf('!git clone %s %s', a:repo, l:path)
+function! git#use(repo) abort
+  let dir = '~/.cache/dpp/repos/github.com/'->expand() .. a:repo
+  if !dir->isdirectory()
+    execute '!git clone https://github.com/' .. a:repo dir
   endif
-  execute 'set runtimepath^=' .. l:path
+  execute 'set runtimepath^=' .. dir->fnamemodify(':p')->substitute('[/\\]$', '', '')
 endfunction
