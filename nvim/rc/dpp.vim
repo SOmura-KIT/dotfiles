@@ -9,4 +9,7 @@ if s:dpp_base->dpp#min#load_state()
   call git#use('Shougo/dpp-protocol-git')
   call git#use('https://github.com/vim-denops/denops.vim')
   autocmd User DenopsReady call dpp#make_state(s:dpp_base, '<sfile>'->expand()->fnamemodify(':h') .. '/dpp.ts')
+else
+  autocmd MyAutoCmd BufWritePost *.lua,*.vim,*.toml,*.ts,vimrc,.vimrc
+        \ call dpp#check_files()
 endif
