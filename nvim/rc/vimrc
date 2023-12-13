@@ -40,5 +40,6 @@ augroup ToggleRelativeNumber
 augroup END
 
 "--------------------
+colorscheme industry
 source ~/.config/nvim/rc/keymap.vim
 execute 'source' '<sfile>'->expand()->fnamemodify(':h') .. '/dpp.vim'
