@@ -40,6 +40,8 @@ augroup ToggleRelativeNumber
 augroup END
 
 "--------------------
+let rc_path = '<sfile>'->expand()->fnamemodify(':h')
+execute 'source' rc_path .. '/keymap.vim'
+execute 'source' rc_path .. '/dpp.vim'
+
 colorscheme industry
-source ~/.config/nvim/rc/keymap.vim
-execute 'source' '<sfile>'->expand()->fnamemodify(':h') .. '/dpp.vim'

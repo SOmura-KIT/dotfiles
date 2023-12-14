@@ -16,7 +16,6 @@ type LazyMakeStateResult = {
   plugins: Plugin[];
   stateLines: string[];
 };
-
 export class Config extends BaseConfig {
   override async config(args: {
     denops: Denops;
@@ -26,24 +25,26 @@ export class Config extends BaseConfig {
   }): Promise<{
     plugins: Plugin[];
     stateLines: string[];
-  }> {
-    args.contextBuilder.setGlobal({
+  }> { args.contextBuilder.setGlobal({
       protocols: ["git"],
     });
 
     const [context, options] = await args.contextBuilder.get(args.denops);
 
+
     // Load toml plugins
-    const tomlDir = "~/.config/nvim/dpp/tomls/";
-    const tomlFilenames = [
-      "dpp.toml",
-      "plug.toml",
-      "plug_lazy.toml",
-      "ddc.toml",
+    // const rcDir = Deno.env.get("DPP_DIR");
+    const tomlFiles = [
+      "$BASE_DIR/denops.toml",
+      "$BASE_DIR/dpp.toml",
+      "$BASE_DIR/ddc.toml",
+      "$BASE_DIR/plug.toml",
+      "$BASE_DIR/plug_lazy.toml",
+      "$BASE_DIR/neovim.toml",
     ];
 
     const tomls: Toml[] = [];
-    for (const aTomlFile of tomlFilenames) {
+    for (const aTomlFile of tomlFiles) {
       const toml = await args.dpp.extAction(
         args.denops,
         context,
@@ -51,7 +52,7 @@ export class Config extends BaseConfig {
         "toml",
         "load",
         {
-          path: tomlDir + aTomlFile,
+          path: aTomlFile,
           options: {
             lazy: false,
           },
