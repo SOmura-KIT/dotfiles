@@ -1,14 +1,22 @@
 [[plugins]]
 repo = 'Shougo/dpp.vim'
+depends = 'denops.vim'
+rtp = ''
 hook_add = '''
 command! DppRemakeState if denops#server#status() == 'running' | call dpp#make_state() | endif
 '''
 
 [[plugins]]
+repo = 'Shougo/dpp-ext-lazy'
+rtp = ''
+
+[[plugins]]
 repo = 'Shougo/dpp-protocol-git'
+on_source = 'dpp.vim'
 
 [[plugins]]
 repo = 'Shougo/dpp-ext-installer'
+on_source = 'dpp.vim'
 hook_add = '''
 command! DppInstall call dpp#async_ext_action('installer', 'install')
 command! DppUpdate call dpp#async_ext_action('installer', 'update')
@@ -16,7 +24,4 @@ command! DppUpdate call dpp#async_ext_action('installer', 'update')
 
 [[plugins]]
 repo = 'Shougo/dpp-ext-toml'
-
-[[plugins]]
-repo = 'Shougo/dpp-ext-lazy'
-
+on_source = 'dpp.vim'

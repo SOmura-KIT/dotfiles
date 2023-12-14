@@ -54,7 +54,7 @@ export class Config extends BaseConfig {
         {
           path: aTomlFile,
           options: {
-            lazy: false,
+            lazy: true,
           },
         },
       // ) as Toml | undefined;

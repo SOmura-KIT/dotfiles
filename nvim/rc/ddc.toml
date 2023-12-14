@@ -1,11 +1,15 @@
 [[plugins]]
 repo = 'Shougo/ddc.vim'
+depends = 'denops.vim'
+on_event = ['InsertEnter', 'CmdlineEnter']
 hook_add='''
-autocmd CmdlineEnter,InsertEnter * ++once source ~/.config/nvim/config/ddc.vim
+call ddc#custom#load_config('$BASE_DIR/ddc.ts'->expand())
+call ddc#enable()
 '''
 
 [[plugins]]
 repo = 'Shougo/pum.vim'
+on_source = 'ddc.vim'
 hook_add='''
 inoremap <C-n>   <Cmd>call pum#map#insert_relative(+1)<CR>
 inoremap <C-p>   <Cmd>call pum#map#insert_relative(-1)<CR>
@@ -15,9 +19,20 @@ inoremap <C-e>   <Cmd>call pum#map#cancel()<CR>
 
 [[plugins]]
 repo = 'Shougo/ddc-ui-pum'
+depends = 'pum.vim'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-source-around'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'tani/ddc-fuzzy'
+on_source = 'ddc.vim'
 
 [[plugins]]
 repo = 'vim-skk/skkeleton'
+on_source = 'ddc.vim'
 hook_add='''
 imap <C-j> <Plug>(skkeleton-enable)
 cmap <C-j> <Plug>(skkeleton-enable)

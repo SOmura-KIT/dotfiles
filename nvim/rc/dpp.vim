@@ -1,7 +1,7 @@
 const s:dpp_base = '~/.cache/dpp'->expand()
 call git#use('Shougo/dpp.vim')
 call git#use('Shougo/dpp-ext-lazy')
-const s:dpp_config = '<sfile>'->expand()->fnamemodify(':h') .. '/dpp.ts'
+"const s:dpp_config = '<sfile>'->expand()->fnamemodify(':h') .. '/dpp.ts'
 let $BASE_DIR = '<sfile>'->expand()->fnamemodify(':h')
 
 if s:dpp_base->dpp#min#load_state()
