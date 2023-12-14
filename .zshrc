@@ -30,7 +30,7 @@ alias q='exit'
 alias rm='trash'
 alias v='nvim'
 alias view='nvim -R'
-alias wlanscan='iwctl station wlan0 scan && iwctl station wlan0 get-networks'
+alias wlanscan='iwctl station wlan0 scan && sleep 1 && iwctl station wlan0 get-networks'
 
 # binds
 # zkbd と互換性のあるハッシュテーブルを作成し、
