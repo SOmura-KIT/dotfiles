@@ -4,3 +4,4 @@ setlocal shiftwidth=4
 setlocal expandtab
 
 nnoremap gU gUaw
+inoremap <C-U> <Esc>gUawea
