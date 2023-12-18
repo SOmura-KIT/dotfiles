@@ -30,7 +30,7 @@ export class Config extends BaseConfig {
     });
 
     const [context, options] = await args.contextBuilder.get(args.denops);
-
+    const hasNvim = args.denops.meta.host === "nvim";
 
     // Load toml plugins
     // const rcDir = Deno.env.get("DPP_DIR");
@@ -39,8 +39,8 @@ export class Config extends BaseConfig {
       "$BASE_DIR/dpp.toml",
       "$BASE_DIR/ddc.toml",
       "$BASE_DIR/plug.toml",
-      "$BASE_DIR/plug_lazy.toml",
       "$BASE_DIR/neovim.toml",
+      hasNvim ? "$BASE_DIR/neovim.toml" : "$BASE_DIR/vim.toml",
     ];
 
     const tomls: Toml[] = [];

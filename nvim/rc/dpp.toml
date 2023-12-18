@@ -1,10 +1,6 @@
 [[plugins]]
 repo = 'Shougo/dpp.vim'
-depends = 'denops.vim'
 rtp = ''
-hook_add = '''
-command! DppRemakeState if denops#server#status() == 'running' | call dpp#make_state() | endif
-'''
 
 [[plugins]]
 repo = 'Shougo/dpp-ext-lazy'
