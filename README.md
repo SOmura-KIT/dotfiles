@@ -27,5 +27,5 @@
 * [x] <数字>j, kのときのgj gkへのマップの無効化
 * [x] Git関係のプラグインを何か導入(候補: Gin)
 * [x] ddcのTypeScript移行
-* [ ] ddcでnvim-lspが想定通り動作しない問題の修正
-* [ ] dduのTypeScript移行
+* [x] dduのTypeScript移行
+* [ ] dppの遅延読み込みで、dpp_ext_installerなどが読みこまれていない問題の解消
