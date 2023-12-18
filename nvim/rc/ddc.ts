@@ -13,10 +13,22 @@ export class Config extends BaseConfig {
         'CmdlineEnter',
         'CmdlineChanged',
       ],
-      sources: ['skkeleton'],
+      sources: ['skkeleton', 'around'],
+      cmdlineSources: {
+        ':': ['cmdline', 'cmdline-history', 'around'],
+        '@': ['cmdline-history', 'around'],
+        '>': ['cmdline-history', 'around'],
+        '/': ['around'],
+        '?': ['around'],
+        '-': ['around'],
+        '=': [],
+      },
       sourceOptions: {
         _: {
           maxItems: 10,
+          matchers: ['matcher_fuzzy'],
+          sorters: ['sorter_fuzzy'],
+          converters: ['converter_fuzzy'],
         },
         skkeleton: {
           mark: '[SKK]',
@@ -24,6 +36,24 @@ export class Config extends BaseConfig {
           sorters: [],
           minAutoCompleteLength: 1,
           isVolatile: true,
+        },
+        around: {
+          mark: '[ARW]',
+        },
+        cmdline: {
+          mark: '[CMD]',
+        },
+        "cmdline-history": {
+          mark: '[HST]',
+          sorters: [],
+        },
+      },
+      filterParams: {
+        matcher_fuzzy: {
+          splitMode: 'word',
+        },
+        converter_fuzzy: {
+          hlGroup: 'SpellBad',
         },
       },
     });
