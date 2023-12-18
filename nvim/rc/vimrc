@@ -18,17 +18,6 @@ if '+termguicolors'->exists() && !has('gui_running')
   set termguicolors
 endif
 
-"try
-"  set cmdheight=0
-"  augroup ZeroHeightCmdline
-"    autocmd!
-"    autocmd CmdlineEnter,RecordingEnter * set cmdheight=1
-"    autocmd CmdlineLeave,RecordingLeave * set cmdheight=0
-"  augroup END
-"catch
-"  set cmdheight=1
-"endtry
-
 " autocmd --------------------
 augroup ToggleRelativeNumber
   autocmd!
