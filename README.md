@@ -23,9 +23,12 @@
 ## ToDo
 ### Neovim
 * [x] dppへの移行
-* [ ] j, kでの移動カーソルが下から3, 4行目くらいになるようにする
+* [ ] j, kでの移動カーソルが下から3, 4行目くらいになるようにする(Astrovimみたいな感じ)
 * [x] <数字>j, kのときのgj gkへのマップの無効化
 * [x] Git関係のプラグインを何か導入(候補: Gin)
 * [x] ddcのTypeScript移行
 * [x] dduのTypeScript移行
-* [ ] dppの遅延読み込みで、dpp_ext_installerなどが読みこまれていない問題の解消
+* [x] dppの遅延読み込みで、dpp_ext_installerなどが読みこまれていない問題の解消
+* [ ] 非nvim環境用のvim.tomlを作成
+* [ ] vim/nvimディストリビューションをいくつか使ってみて、面白そうな機能を引っ張ってきたい
+* [ ] ddcを充実。前の環境でddcのskkeletonとddc-source-cpilotの噛み合せが悪かったから、調整必要。
