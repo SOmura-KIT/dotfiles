@@ -15,6 +15,7 @@ call ddc#enable()
 repo = 'Shougo/pum.vim'
 on_source = 'ddc.vim'
 hook_add='''
+inoremap <C-i> <Cmd>call pum#map#insert_relative(+1)<CR>
 inoremap <C-n> <Cmd>call pum#map#insert_relative(+1)<CR>
 inoremap <C-p> <Cmd>call pum#map#insert_relative(-1)<CR>
 inoremap <C-y> <Cmd>call pum#map#confirm()<CR>
