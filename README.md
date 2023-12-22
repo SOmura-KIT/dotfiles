@@ -32,3 +32,4 @@
 * [ ] 非nvim環境用のvim.tomlを作成
 * [ ] vim/nvimディストリビューションをいくつか使ってみて、面白そうな機能を引っ張ってきたい
 * [ ] ddcを充実。前の環境でddcのskkeletonとddc-source-cpilotの噛み合せが悪かったから、調整必要。
+* [ ] ddcでhas("nvim")
