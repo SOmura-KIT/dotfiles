@@ -1,0 +1,7 @@
+[[plugins]]
+repo = 'prabirshrestha/vim-lsp'
+on_cmd = 'HogeHoge'
+
+[[plugins]]
+repo = 'mattn/vim-lsp-settings'
+depends = 'vim-lsp'
