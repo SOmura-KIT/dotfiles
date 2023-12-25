@@ -113,12 +113,21 @@ bindkey '^P' up-line-or-beginning-search
 bindkey '^N' down-line-or-beginning-search
 
 # source
-source ${HOME}/.local/source/cdf.sh
+if [[ -f "$HOME/.local/source.cdf.sh" ]]; then
+  source ${HOME}/.local/source/cdf.sh
+fi
 
-source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+if [[ -f "/usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme" ]]; then
+  source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+fi
 
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+if [[ -f "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]]; then
+  source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
+
+if [[ -f "/usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh" ]]; then
+  source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
 
 # TMUX
 if [ ! "$TERM" = "linux" ]; then
@@ -146,21 +155,20 @@ if [ "$TERM" = "linux" ]; then
   esac
 fi
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/somura/miniforge3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/somura/miniforge3/etc/profile.d/conda.sh" ]; then
-        . "/home/somura/miniforge3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/somura/miniforge3/bin:$PATH"
-    fi
+if [[ -d "$HOME/miniforge3" ]]; then
+  __conda_setup="$($HOME/miniforge3/bin/conda 'shell.zsh' 'hook' 2> /dev/null)"
+  if [ $? -eq 0 ]; then
+      eval "$__conda_setup"
+  else
+      if [ -f "$HOME/miniforge3/etc/profile.d/conda.sh" ]; then
+          . "$HOME/miniforge3/etc/profile.d/conda.sh"
+      else
+          export PATH="$HOME/miniforge3/bin:$PATH"
+      fi
+  fi
+  unset __conda_setup
 fi
-unset __conda_setup
 
-if [ -f "/home/somura/miniforge3/etc/profile.d/mamba.sh" ]; then
-    . "/home/somura/miniforge3/etc/profile.d/mamba.sh"
+if [ -f "$HOME/miniforge3/etc/profile.d/mamba.sh" ]; then
+    . "$HOME/miniforge3/etc/profile.d/mamba.sh"
 fi
-# <<< conda initialize <<<
