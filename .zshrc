@@ -32,6 +32,10 @@ if [[ -d "$HOME/.local/bin" ]]; then
   export PATH=$HOME/.local/bin:$PATH
 fi
 
+if [[ -d "$HOME/.deno/bin" ]]; then
+  export PATH=$HOME/.local/bin:$PATH
+fi
+
 # aliases
 alias ..='cd ..'
 alias ..2='cd ../..'
