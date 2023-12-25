@@ -3,7 +3,8 @@ typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 else
-  export PS1='%n@%m:%~%#$'\n'$ '
+  export PS1='%n@%m:%~%#
+$ '
 fi
 
 # OS情報を取得
