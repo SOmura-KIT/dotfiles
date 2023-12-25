@@ -34,4 +34,4 @@ let rc_path = '<sfile>'->expand()->fnamemodify(':h')
 execute 'source' rc_path .. '/keymap.vim'
 execute 'source' rc_path .. '/dpp.vim'
 
-colorscheme industry
+colorscheme icecream
