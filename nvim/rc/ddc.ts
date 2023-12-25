@@ -52,9 +52,6 @@ export class Config extends BaseConfig {
         matcher_fuzzy: {
           splitMode: 'word',
         },
-        converter_fuzzy: {
-          hlGroup: 'SpellBad',
-        },
       },
     });
   }
