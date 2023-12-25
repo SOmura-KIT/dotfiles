@@ -1,17 +1,27 @@
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+else
+  export PS1='%n@%m:%~%#\n$ '
 fi
+
+# OS情報を取得
+source /etc/os-release
 
 # 補完
 autoload -Uz compinit promptinit
 compinit
 promptinit
 zstyle ':completion:*' menu select
+
+# path
+#if [[ -d "$HOME/.local/nvim/bin" ]]; then
+#  export PATH=$HOME/.local/nvim/bin:$PATH
+#fi
+if [[ -d "$HOME/.local/bin" ]]; then
+  export PATH=$HOME/.local/bin:$PATH
+fi
 
 # aliases
 alias ..='cd ..'
@@ -24,13 +34,28 @@ alias grep='grep --color=auto'
 alias h='cd ~'
 alias history='history | less'
 alias ip='ip -color=auto'
-alias latexmk='latexmk -pvc'
 alias ls='ls --color=auto'
 alias q='exit'
-alias rm='trash'
-alias v='nvim'
-alias view='nvim -R'
-alias wlanscan='iwctl station wlan0 scan && sleep 1 && iwctl station wlan0 get-networks'
+if command -v nvim &> /dev/null; then
+  alias v='nvim'
+  alias view='nvim -R'
+elif command -v vim &> /dev/null; then
+  alias v='vim'
+fi
+
+if command -v latexmk &> /dev/null; then
+  alias latexmk='latexmk -pvc'
+fi
+
+if command -v trash &> /dev/null; then
+  alias rm='trash'
+else
+  alias rm='rm -i'
+fi
+
+if command -v iwctl &> /dev/null; then
+  alias wlanscan='iwctl station wlan0 scan && sleep 1 && iwctl station wlan0 get-networks'
+fi
 
 # binds
 # zkbd と互換性のあるハッシュテーブルを作成し、
@@ -82,12 +107,6 @@ zle -N down-line-or-beginning-search
 [[ -n "${key[Down]}" ]] && bindkey -- "${key[Down]}" down-line-or-beginning-search
 bindkey '^P' up-line-or-beginning-search
 bindkey '^N' down-line-or-beginning-search
-
-# path
-export PATH=$HOME/.local/nvim/bin:$PATH
-export PATH=$HOME/.local/bin:$PATH
-export PATH=$HOME/.cargo/bin:$PATH
-export PATH=$HOME/leJOS_EV3_0.9.1-beta/bin:$PATH
 
 # source
 source ${HOME}/.local/source/cdf.sh
@@ -150,4 +169,3 @@ if [ -f "/home/somura/miniforge3/etc/profile.d/mamba.sh" ]; then
     . "/home/somura/miniforge3/etc/profile.d/mamba.sh"
 fi
 # <<< conda initialize <<<
-
