@@ -16,9 +16,10 @@ promptinit
 zstyle ':completion:*' menu select
 
 # path
-#if [[ -d "$HOME/.local/nvim/bin" ]]; then
-#  export PATH=$HOME/.local/nvim/bin:$PATH
-#fi
+if [[ -d "$HOME/.local/nvim/bin" ]]; then
+  export PATH=$HOME/.local/nvim/bin:$PATH
+fi
+
 if [[ -d "$HOME/.local/bin" ]]; then
   export PATH=$HOME/.local/bin:$PATH
 fi
@@ -61,6 +62,9 @@ fi
 # zkbd と互換性のあるハッシュテーブルを作成し、
 # 他のキーをこのハッシュテーブルに追加する (man 5 terminfo を参照)
 typeset -g -A key
+
+# Gentoo環境のデフォルトがVim modeなので、明示してemacs modeに
+bindkey -e
 
 key[Home]="${terminfo[khome]}"
 key[End]="${terminfo[kend]}"
@@ -110,16 +114,7 @@ bindkey '^N' down-line-or-beginning-search
 
 # source
 source ${HOME}/.local/source/cdf.sh
-# source ${HOME}/.local/source/kit.sh
 
-# mocword
-export MOCWORD_DATA=$HOME/.local/mocword.sqlite
-
-# パワーラインPS1
-# grmlが優先される場合、
-# /etc/zsh/zshrc の各行の prompt_grml_precmd_worker をコメントアウト
-# powerline-daemon -q
-# . /usr/share/powerline/bindings/zsh/powerline.zsh
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
