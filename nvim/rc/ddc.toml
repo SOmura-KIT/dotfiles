@@ -28,6 +28,9 @@ cnoremap <expr> <C-n>
 cnoremap <expr> <C-p>
       \ pum#visible() ? '<Cmd>call pum#map#insert_relative(-1)<CR>' :
       \ ddc#map#manual_complete()
+
+" <Tab>が置き換えられるため、防止
+inoremap <Tab> <Tab>
 '''
 
 [[plugins]]
