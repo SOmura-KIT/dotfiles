@@ -19,6 +19,9 @@ inoremap <C-i> <Cmd>call pum#map#insert_relative(+1)<CR>
 inoremap <C-n> <Cmd>call pum#map#insert_relative(+1)<CR>
 inoremap <C-p> <Cmd>call pum#map#insert_relative(-1)<CR>
 inoremap <C-y> <Cmd>call pum#map#confirm()<CR>
+inoremap <expr> <C-[>
+      \ pum#visible() ? pum#map#cancel() :
+      \ '\<C-[>'
 cnoremap <expr> <C-i>
       \ pum#visible() ? '<Cmd>call pum#map#insert_relative(+1)<CR>' :
       \ ddc#map#manual_complete()
@@ -28,6 +31,8 @@ cnoremap <expr> <C-n>
 cnoremap <expr> <C-p>
       \ pum#visible() ? '<Cmd>call pum#map#insert_relative(-1)<CR>' :
       \ ddc#map#manual_complete()
+cnoremap <Tab> <C-p>
+cnoremap <C-Tab> <C-n>
 
 " <Tab>が置き換えられるため、防止
 inoremap <Tab> <Tab>
