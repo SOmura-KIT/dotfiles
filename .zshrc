@@ -33,7 +33,7 @@ if [[ -d "$HOME/.local/bin" ]]; then
 fi
 
 if [[ -d "$HOME/.deno/bin" ]]; then
-  export PATH=$HOME/.local/bin:$PATH
+  export PATH=$HOME/.deno/bin:$PATH
 fi
 
 # aliases
