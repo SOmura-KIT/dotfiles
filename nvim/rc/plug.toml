@@ -8,3 +8,7 @@ on_event = 'InsertEnter'
 [[plugins]]
 repo = 'dstein64/vim-startuptime'
 on_cmd = 'StartupTime'
+
+[[plugins]]
+repo = 'fatih/vim-go'
+on_ft = 'go'

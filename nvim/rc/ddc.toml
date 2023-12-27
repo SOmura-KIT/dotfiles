@@ -56,6 +56,13 @@ repo = 'Shougo/ddc-source-cmdline-history'
 on_source = 'ddc.vim'
 
 [[plugins]]
+repo = 'Shougo/ddc-source-lsp'
+on_source = 'ddc.vim'
+lua_source = '''
+local capabilities = require("ddc_source_lsp").make_client_capabilities()
+'''
+
+[[plugins]]
 repo = 'tani/ddc-fuzzy'
 on_source = 'ddc.vim'
 

@@ -13,7 +13,7 @@ export class Config extends BaseConfig {
         'CmdlineEnter',
         'CmdlineChanged',
       ],
-      sources: ['skkeleton', 'around'],
+      sources: ['skkeleton', 'around', 'lsp'],
       cmdlineSources: {
         ':': ['cmdline', 'cmdline-history', 'around'],
         '@': ['cmdline-history', 'around'],
@@ -39,6 +39,11 @@ export class Config extends BaseConfig {
         },
         around: {
           mark: '[ARW]',
+        },
+        lsp: {
+          mark: '[LSP]',
+          forceCompletionPattern: "\\.\\w*|::\\w*|->\\w*",
+          dup: 'force',
         },
         cmdline: {
           mark: '[CMD]',
