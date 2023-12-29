@@ -1,0 +1,51 @@
+*my-linux.txt* Linux関係
+
+Linux関係の再現のためのドキュメント。
+
+==============================================================================
+1. Gentoo *my-gentoo*
+
+以下はGentoo環境に関するヘルプである。記述時点での環境を下に記す。
+* カーネル sys-kernel/gentoo-sources
+* init OpenRC
+* initramfs dracut
+* ブートローダ grub
+
+==============================================================================
+1.1 カーネルのインストール/アップデート *my-gentoo-kernel-update*
+
+1.1.1 使用するカーネルの決定
+$ eselect kernel list
+# eselect kernel set <number>
+
+1.1.2 カーネルパラメータの引き継ぎ
+新規インストールの場合は不要
+# cp /usr/src/linux-<old-version>-gentoo/.config /usr/src/linux/
+# cd /usr/src/linux/
+# make oldconfig
+
+1.1.3 カーネルパラメータの設定
+# make menuconfig
+
+1.1.4 カーネルのビルド
+Nvidiaを使用している場合は/etc/dracut.conf.d/nvidia.confを編集。
+https://wiki.gentoo.org/wiki/NVIDIA/nvidia-drivers/ja を参照。
+# make -jX && modules_install
+-jXオプションのXはメモリ容量/2かコア数の小さい方。
+16GBメモリならX=8。
+# make install
+
+1.1.5 initramfsの設定
+# dracut --kver=<kernel-version>-gentoo
+
+1.1.6 ブートローダの設定
+# grub-mkconfig -o /boot/grub/grub.cfg
+
+1.1.7 古いカーネルを残す(オプション)
+# emerge --noreplace sys-kernel/gentoo-sources:<kernel-version>
+削除
+# emerge --deselect sys-kernel/gentoo-sources:<kernel-version>
+
+1.1.8 環境構築後
+# modprobe nvidia
+これが無いとstartxが出来ないはず
