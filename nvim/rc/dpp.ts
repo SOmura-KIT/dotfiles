@@ -32,8 +32,6 @@ export class Config extends BaseConfig {
     const [context, options] = await args.contextBuilder.get(args.denops);
     const hasNvim = args.denops.meta.host === "nvim";
 
-    // Load toml plugins
-    // const rcDir = Deno.env.get("DPP_DIR");
     const tomlFiles = [
       "$BASE_DIR/denops.toml",
       "$BASE_DIR/dpp.toml",

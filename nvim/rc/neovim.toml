@@ -71,3 +71,10 @@ require('mason-lspconfig').setup_handlers({
 repo = 'nvim-treesitter/playground'
 depends = 'neovim-treesitter'
 on_event = 'TSPlaygroundToggle'
+
+[[plugins]]
+repo = 'windwp/nvim-autopairs'
+on_event = 'InsertEnter'
+lua_source = '''
+require('nvim-autopairs').setup({})
+'''
