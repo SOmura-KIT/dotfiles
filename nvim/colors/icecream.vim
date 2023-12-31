@@ -13,13 +13,17 @@ if (has('termguicolors') && &termguicolors) || has('gui_running')
     let g:terminal_color_{i} = g:terminal_ansi_colors[i]
   endfor
 endif
-hi Normal           guifg=#ffffff guibg=#303030               gui=NONE      cterm=NONE
+
+" My Colors
+let bg_deepblue = '#202050'
+
+hi Normal           guifg=#ffffff guibg=#202050               gui=NONE      cterm=NONE
 hi EndOfBuffer      guifg=#ffffff guibg=#303030               gui=NONE      cterm=NONE
 hi StatusLine       guifg=#000000 guibg=#dadada               gui=bold      cterm=bold
 hi StatusLineNC     guifg=#000000 guibg=#6c6c6c               gui=NONE      cterm=NONE
 hi StatusLineTerm   guifg=#000000 guibg=#00ff00               gui=bold      cterm=bold
 hi StatusLineTermNC guifg=#000000 guibg=#5fd75f               gui=NONE      cterm=NONE
-hi VertSplit        guifg=#000000 guibg=#6c6c6c               gui=NONE      cterm=NONE
+hi VertSplit        guifg=#ffa8ff guibg=#a0a0a0               gui=NONE      cterm=NONE
 hi Pmenu            guifg=#505050 guibg=#ffffff               gui=NONE      cterm=NONE
 hi PmenuSel         guifg=#505050 guibg=#00ffff               gui=NONE      cterm=NONE
 hi PmenuSbar        guifg=NONE    guibg=#000000               gui=NONE      cterm=NONE
