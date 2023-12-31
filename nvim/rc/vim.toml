@@ -5,3 +5,8 @@ on_cmd = 'HogeHoge'
 [[plugins]]
 repo = 'mattn/vim-lsp-settings'
 depends = 'vim-lsp'
+
+[[plugins]]
+repo = 'cohama/lexima.vim'
+on_event = 'InsertEnter'
+

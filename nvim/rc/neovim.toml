@@ -66,8 +66,35 @@ require('mason-lspconfig').setup_handlers({
 repo = 'nvim-treesitter/nvim-treesitter'
 on_event = 'BufRead'
 hook_post_update = 'TSUpdate'
+lua_source = '''
+require('nvim-treesitter.configs').setup({
+  ensure_installed = 'all',
+  sync_install = true,
+  highright = {
+    enable = true,
+  },
+  autotag = {
+    enable = true,
+  },
+})
+'''
 
 [[plugins]]
 repo = 'nvim-treesitter/playground'
 depends = 'neovim-treesitter'
 on_event = 'TSPlaygroundToggle'
+
+[[plugins]]
+repo = 'windwp/nvim-autopairs'
+on_event = 'InsertEnter'
+lua_source = '''
+require('nvim-autopairs').setup({})
+'''
+
+[[plugins]]
+repo = 'windwp/nvim-ts-autotag'
+on_source = 'nvim-treesitter'
+on_ft = ['astro', 'glimmer', 'handlebars', 'html', 'javascript', 'jsx', 'markdown', 'php', 'rescript', 'svelte', 'tsx', 'typescript', 'vue', 'xml']
+lua_source = '''
+require('nvim-ts-autotag').setup({})
+'''

@@ -19,9 +19,6 @@ inoremap <C-i> <Cmd>call pum#map#insert_relative(+1)<CR>
 inoremap <C-n> <Cmd>call pum#map#insert_relative(+1)<CR>
 inoremap <C-p> <Cmd>call pum#map#insert_relative(-1)<CR>
 inoremap <C-y> <Cmd>call pum#map#confirm()<CR>
-inoremap <expr> <C-[>
-      \ pum#visible() ? pum#map#cancel() :
-      \ '\<C-[>'
 cnoremap <expr> <C-i>
       \ pum#visible() ? '<Cmd>call pum#map#insert_relative(+1)<CR>' :
       \ ddc#map#manual_complete()
@@ -54,6 +51,13 @@ on_source = 'ddc.vim'
 [[plugins]]
 repo = 'Shougo/ddc-source-cmdline-history'
 on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-source-lsp'
+on_source = 'ddc.vim'
+lua_source = '''
+local capabilities = require("ddc_source_lsp").make_client_capabilities()
+'''
 
 [[plugins]]
 repo = 'tani/ddc-fuzzy'
