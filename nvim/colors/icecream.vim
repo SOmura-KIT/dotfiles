@@ -1,7 +1,9 @@
 set background=dark
 
 " hi clear
-source $VIMRUNTIME/colors/vim.lua " Nvim: revert to Vim default color scheme
+if has('nvim')
+  source $VIMRUNTIME/colors/vim.lua " Nvim: revert to Vim default color scheme
+endif
 let g:colors_name = 'icecream'
 
 let s:t_Co = &t_Co
@@ -14,11 +16,9 @@ if (has('termguicolors') && &termguicolors) || has('gui_running')
   endfor
 endif
 
-" My Colors
-let bg_deepblue = '#202050'
 
 hi Normal           guifg=#ffffff guibg=#202050               gui=NONE      cterm=NONE
-hi EndOfBuffer      guifg=#ffffff guibg=#303030               gui=NONE      cterm=NONE
+hi EndOfBuffer      guifg=#ffffff guibg=#202050               gui=NONE      cterm=NONE
 hi StatusLine       guifg=#000000 guibg=#dadada               gui=bold      cterm=bold
 hi StatusLineNC     guifg=#000000 guibg=#6c6c6c               gui=NONE      cterm=NONE
 hi StatusLineTerm   guifg=#000000 guibg=#00ff00               gui=bold      cterm=bold
