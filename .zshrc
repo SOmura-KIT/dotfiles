@@ -11,17 +11,19 @@ fi
 source /etc/os-release
 
 # 補完
-if [ "$NAME" = "Gentoo" ]; then
-  autoload -U compinit promptinit
-  compinit
-  promptinit; prompt gentoo
-  zstyle ':completion::complete:*' use-cache 1
-elif [ "$NAME" = "Arch Linux" ]; then
-  autoload -Uz compinit promptinit
-  compinit
-  promptinit
-  zstyle ':completion:*' menu select
-fi
+case "$ID" in
+  "gentoo")
+    autoload -U compinit promptinit
+    compinit
+    promptinit; prompt gentoo
+    zstyle ':completion::complete:*' use-cache 1
+    ;;
+  "arch" | "debian")
+    autoload -Uz compinit promptinit
+    compinit
+    promptinit
+    zstyle ':completion:*' menu select
+esac
 
 # path
 if [[ -d "$HOME/.local/nvim/bin" ]]; then
