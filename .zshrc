@@ -39,6 +39,10 @@ if [[ -d "$HOME/.deno/bin" ]]; then
   export PATH=$HOME/.deno/bin:$PATH
 fi
 
+if [[ -d "/snap/bin" ]]; then
+  export PATH=/snap/bin:$PATH
+fi
+
 # aliases
 alias ..='cd ..'
 alias ..2='cd ../..'
