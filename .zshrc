@@ -27,10 +27,6 @@ case "$ID" in
 esac
 
 # path
-if [[ -d "$HOME/.local/nvim/bin" ]]; then
-  export PATH=$HOME/.local/nvim/bin:$PATH
-fi
-
 if [[ -d "$HOME/.local/bin" ]]; then
   export PATH=$HOME/.local/bin:$PATH
 fi
