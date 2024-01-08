@@ -40,7 +40,7 @@ bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 
 # ランチャー
-bindsym Mod4+space exec --no-startup-id rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/polybar/docky/scripts/rofi/launcher.rasi
+bindsym Mod4+space exec --no-startup-id rofi -no-config -no-lazy-grab -show run -modi drun -theme ~/.config/polybar/docky/scripts/rofi/launcher.rasi
 
 # ウィンドウを閉じる
 bindsym Mod4+c kill
