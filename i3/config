@@ -218,6 +218,7 @@ exec_always --no-startup-id bash $HOME/.fehbg
 # 起動時のデフォルトのワークスペース
 assign [class="Alacritty"] $ws1
 assign [class="firefox"] $ws2
+assign [class="Firefox-esr"] $ws2
 assign [class="thunderbird"] $ws3
 assign [class="Slack"] $ws4
 assign [class="kdeconnect"] $ws9
