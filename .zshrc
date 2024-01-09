@@ -161,16 +161,6 @@ case "$ID" in
     ;;
 esac
 
-# TMUX
-if [ ! "$TERM" = "linux" ]; then
-  if which tmux >/dev/null 2>&1; then
-      #if not inside a tmux session, and if no session is started, start a new session
-      test -z "$TMUX" && (tmux attach || tmux new-session)
-  fi
-fi
-
-neofetch
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
@@ -204,3 +194,5 @@ fi
 if [ -f "$HOME/miniforge3/etc/profile.d/mamba.sh" ]; then
     . "$HOME/miniforge3/etc/profile.d/mamba.sh"
 fi
+
+neofetch
