@@ -36,6 +36,7 @@ export class Config extends BaseConfig {
       "$BASE_DIR/denops.toml",
       "$BASE_DIR/dpp.toml",
       "$BASE_DIR/ddc.toml",
+      "$BASE_DIR/ddu.toml",
       "$BASE_DIR/plug.toml",
       "$BASE_DIR/neovim.toml",
       hasNvim ? "$BASE_DIR/neovim.toml" : "$BASE_DIR/vim.toml",
@@ -98,6 +99,13 @@ export class Config extends BaseConfig {
     ) as LazyMakeStateResult | undefined;
 
     return {
+      checkFiles: await fn.globpath(
+        args.denops,
+        Deno.env.get("BASE_DIR"),
+        "*",
+        1,
+        1,
+      ) as unknown as string[],
       ftplugins,
       hooksFiles,
       plugins: lazyResult?.plugins ?? [],
