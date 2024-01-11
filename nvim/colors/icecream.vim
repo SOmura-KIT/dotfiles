@@ -16,6 +16,9 @@ if (has('termguicolors') && &termguicolors) || has('gui_running')
   endfor
 endif
 
+" bg blue -> #202050
+" pink -> 
+" sky blue -> #00ffff
 
 hi Normal           guifg=#ffffff guibg=#202050               gui=NONE      cterm=NONE
 hi EndOfBuffer      guifg=#ffffff guibg=#202050               gui=NONE      cterm=NONE
