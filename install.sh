@@ -127,6 +127,29 @@ function install_tmux() {
   fi
 }
 
+function install_neofetch() {
+  if [ ! -d $BASE_DIR/neofetch-themes ]; then
+    git clone https://github.com/Chick2D/neofetch-themes/ $BASE_DIR/neofetch-themes
+  fi
+  if [ ! -f $HOME/neofetch/config.conf ]; then
+    mv $HOME/.config/neofetch/config.conf $HOME/.config/neofetch/config.conf.backup
+  fi
+  ln -s $BASE_DIR/neofetch-themes/normal/ozozfetch.conf $HOME/.config/neofetch/config.conf
+  if ! command -v "neofetch"; then
+    echo 'Info: Neofetch Installing'
+    case "$ID" in
+      "arch")
+        echo '  $ sudo pacman -S neofetch'
+        ;;
+      "debian")
+        echo '  $ sudo apt install neofetch'
+        ;;
+      *)
+        echo "  use your package manager"
+    esac
+  fi
+}
+
 function install_zsh() {
   ln -s $BASE_DIR/.tmux.conf $HOME/.
   if ! command -v "zsh"; then
@@ -167,6 +190,9 @@ case "$install_target" in
     ;;
   "tmux")
     install_tmux
+    ;;
+  "neofetch")
+    install_neofetch
     ;;
   "zsh")
     install_zsh
