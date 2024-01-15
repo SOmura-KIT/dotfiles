@@ -17,18 +17,18 @@ if (has('termguicolors') && &termguicolors) || has('gui_running')
 endif
 
 " bg blue -> #202050
-" pink -> 
+" pink -> ffa8ff
 " sky blue -> #00ffff
 
-hi Normal           guifg=#ffffff guibg=#202050               gui=NONE      cterm=NONE
-hi EndOfBuffer      guifg=#ffffff guibg=#202050               gui=NONE      cterm=NONE
+hi Normal           guifg=#4c4f69 guibg=#eff1f5               gui=NONE      cterm=NONE
+hi EndOfBuffer      guifg=#4c4f69 guibg=#eff1f5               gui=NONE      cterm=NONE
 hi StatusLine       guifg=#000000 guibg=#dadada               gui=bold      cterm=bold
 hi StatusLineNC     guifg=#000000 guibg=#6c6c6c               gui=NONE      cterm=NONE
 hi StatusLineTerm   guifg=#000000 guibg=#00ff00               gui=bold      cterm=bold
 hi StatusLineTermNC guifg=#000000 guibg=#5fd75f               gui=NONE      cterm=NONE
 hi VertSplit        guifg=#ffa8ff guibg=#a0a0a0               gui=NONE      cterm=NONE
-hi Pmenu            guifg=#505050 guibg=#ffffff               gui=NONE      cterm=NONE
-hi PmenuSel         guifg=#505050 guibg=#00ffff               gui=NONE      cterm=NONE
+hi Pmenu            guifg=#4c4f69 guibg=#ffffff               gui=NONE      cterm=NONE
+hi PmenuSel         guifg=#4c4f69 guibg=#00ffff               gui=NONE      cterm=NONE
 hi PmenuSbar        guifg=NONE    guibg=#000000               gui=NONE      cterm=NONE
 hi PmenuThumb       guifg=NONE    guibg=#6c6c6c               gui=NONE      cterm=NONE
 hi TabLine          guifg=#dadada guibg=#444444               gui=NONE      cterm=NONE
@@ -58,7 +58,7 @@ hi MoreMsg          guifg=#5fd75f guibg=NONE                  gui=bold      cter
 hi Question         guifg=#00ff00 guibg=NONE                  gui=bold      cterm=bold
 hi Todo             guifg=#005fff guibg=#ffff00               gui=NONE      cterm=NONE
 hi MatchParen       guifg=#303030 guibg=#ffa8ff               gui=NONE      cterm=NONE
-hi Search           guifg=#000000 guibg=#ffa8ff               gui=NONE      cterm=NONE
+hi Search           guifg=#4c4f69 guibg=#ffa8ff               gui=NONE      cterm=NONE
 hi IncSearch        guifg=#000000 guibg=#ffa8ff               gui=NONE      cterm=NONE
 hi WildMenu         guifg=#000000 guibg=#ffff00               gui=NONE      cterm=NONE
 hi Cursor           guifg=#000000 guibg=#dadada               gui=NONE      cterm=NONE
@@ -70,7 +70,7 @@ hi SpellRare        guifg=#00ff00 guibg=NONE    guisp=#00ff00 gui=undercurl cter
 hi Comment          guifg=#00afaf guibg=NONE                  gui=NONE      cterm=NONE
 hi Identifier       guifg=#ff00ff guibg=NONE                  gui=NONE      cterm=NONE
 hi Function         guifg=#00ff00 guibg=NONE                  gui=NONE      cterm=NONE
-hi Statement        guifg=#ffffff guibg=NONE                  gui=bold      cterm=bold
+hi Statement        guifg=#4c4f69 guibg=NONE                  gui=bold      cterm=bold
 hi Constant         guifg=#00ffff guibg=NONE                  gui=NONE      cterm=NONE
 hi PreProc          guifg=#ffff00 guibg=NONE                  gui=NONE      cterm=NONE
 hi Type             guifg=#00ff00 guibg=NONE                  gui=bold      cterm=bold
