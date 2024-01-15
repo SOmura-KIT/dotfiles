@@ -9,7 +9,10 @@
 * adi1090x/polybar-themesを使用
 
 ### alacritty
-* alacritty/alacritty-themesを使用
+* alacritty/alacritty-themeを使用
+
+### neofetch
+* Chick2D/neofetch-themesを使用
 
 ## 継続
 ### Neovim
@@ -18,11 +21,14 @@
 
 ## 問題
 ### Neovim
-* ddc-source-nvim-lsp-setupを読み込んだ後にlspのsetupメソッドを読み込まないといけない。LSPの有効化のタイミングをどのタイミングにするか。
+* autocmd User DenopsReady call dpp#make_state(s:dpp_base, '{TypeScript config file path}')が成功しない(手打ちだと成功する)ので、修正必須
 
 ## ToDo
+### Polybar
+* [ ] polybarのテーマでコピーを使用しているので、install.shでgit cloneを行うようにする
+
 ### Zshrc
-* [ ] ディストリビューションやコマンドの有無の確認をするようにする
+* [x] ディストリビューションやコマンドの有無の確認をするようにする
 
 ### Neovim
 * [x] dppへの移行
@@ -32,7 +38,7 @@
 * [x] ddcのTypeScript移行
 * [x] dduのTypeScript移行
 * [x] dppの遅延読み込みで、dpp_ext_installerなどが読みこまれていない問題の解消
-* [ ] 非nvim環境用のvim.tomlを作成
+* [x] 非nvim環境用のvim.tomlを作成
 * [ ] vim/nvimディストリビューションをいくつか使ってみて、面白そうな機能を引っ張ってきたい
 * [ ] ddcを充実。前の環境でddcのskkeletonとddc-source-cpilotの噛み合せが悪かったから、調整必要。
 * [ ] ddcでhas("nvim")
