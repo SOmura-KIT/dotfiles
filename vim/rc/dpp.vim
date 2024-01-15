@@ -10,10 +10,4 @@ if g:dpp_base->dpp#min#load_state()
   call git#use('vim-denops/denops.vim')
   autocmd User DenopsReady call dpp#make_state(g:dpp_base, '$BASE_DIR/dpp.ts'->expand()) |
           \ echomsg 'dpp made state'
-else
-  augroup MyDppCheckFile
-    autocmd!
-    autocmd BufWritePost *.lua,*.vim,*.toml,*.ts,vimrc,.vimrc
-          \ call dpp#check_files()
-  augroup END
 endif
