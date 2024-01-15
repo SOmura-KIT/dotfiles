@@ -29,6 +29,9 @@ augroup ToggleRelativeNumber
         \ endif
 augroup END
 
+" User Commands-------------
+command! DebugRuntimepath echo debug#runtimepath()
+
 "--------------------
 let rc_path = '<sfile>'->expand()->fnamemodify(':h')
 execute 'source' rc_path .. '/keymap.vim'
