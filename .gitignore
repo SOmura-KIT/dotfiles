@@ -1,4 +1,5 @@
 nvim/denops.vim
+alacritty/alacritty-theme/*
 i3blocks/*
 !i3blocks/config
 !i3blocks/volume-wireplumber/

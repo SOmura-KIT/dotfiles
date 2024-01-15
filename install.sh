@@ -31,6 +31,27 @@ function install_vim() {
   fi
 }
 
+function install_alacritty() {
+  ln -s $BASE_DIR/alacritty $HOME/.config/.
+  if [ ! -d "$BASE_DIR/alacritty/alacritty-theme" ]; then
+    git clone https://github.com/alacritty/alacritty-theme $BASE_DIR/alacritty/alacritty-theme
+  fi
+
+  if ! command -v "alacritty"; then
+    echo 'Info: Alacritty Installing'
+    case "$ID" in
+      "arch")
+        echo '  $ sudo pacman -S alacritty'
+        ;;
+      "debian")
+        echo '  $ sudo apt install alacritty'
+        ;;
+      *)
+        echo "use your package manager"
+    esac
+  fi
+}
+
 function install_i3() {
   ln -s $BASE_DIR/i3 $HOME/.config/.
   if ! command -v "i3"; then
@@ -131,6 +152,9 @@ case "$install_target" in
     ;;
   "vim")
     install_vim
+    ;;
+  "alacritty")
+    install_alacritty
     ;;
   "i3")
     install_i3

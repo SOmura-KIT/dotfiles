@@ -1,4 +1,5 @@
-import = ["/home/somura/.config/alacritty/carbonfox.toml"]
+
+import = ["~/.config/alacritty/alacritty-theme/themes/catppuccin_latte.toml"]
 
 [font]
 size = 9.0
