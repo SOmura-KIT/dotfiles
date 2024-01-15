@@ -8,8 +8,8 @@ nnoremap gk k
 nnoremap <ESC> <C-c>
 nnoremap <C-[> <C-c>
 " <C-/>で一時的にignorecaseを有効
+nnoremap / <Cmd>set noignorecase<CR>/
 nnoremap <C-/> <Cmd>set ignorecase<CR>/
-autocmd CmdlineLeave * set noignorecase
 
 inoremap <C-d> <Del>
 inoremap <C-b> <Left>
