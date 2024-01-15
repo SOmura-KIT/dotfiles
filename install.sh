@@ -3,7 +3,7 @@ BASE_DIR="$(dirname "$SCRIPT_PATH")"
 source /etc/os-release
 
 function install_neovim() {
-  ln -s $BASE_DIR/nvim $HOME/.config/.
+  ln -s $BASE_DIR/vim $HOME/.config/nvim
   if ! command -v "nvim"; then
     # dpp.vimが0.10.0以上でしか動作しないため
     # neovim 0.10.0がリリースされたら、パッケージ管理システムもサジェスト
@@ -15,7 +15,7 @@ function install_neovim() {
 }
 
 function install_vim() {
-  ln -s $BASE_DIR/nvim $HOME/.vim
+  ln -s $BASE_DIR/vim $HOME/.vim
   if ! command -v "vim"; then
     echo 'Info: Vim Installing'
     case "$ID" in
