@@ -18,6 +18,7 @@
 ### Neovim
 * latexとかのチートシートとかをhelpfileで作成
 * ddu関係を充実させる
+* スニペットの充実
 
 ## 問題
 ### Neovim
