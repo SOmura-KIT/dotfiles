@@ -8,3 +8,13 @@ on_cmd = 'StartupTime'
 [[plugins]]
 repo = 'fatih/vim-go'
 on_ft = 'go'
+
+[[plugins]]
+repo = 'SOmura-KIT/view-mode.vim'
+on_cmd = [ 'ViewModeCenter', 'ViewModeTop', 'ViewModeBottom', 'ViewModeDisable' ]
+hook_add = '''
+nnoremap <Space>vc <Cmd>ViewModeCenter<CR>
+nnoremap <Space>vt <Cmd>ViewModeTop<CR>
+nnoremap <Space>vb <Cmd>ViewModeBottom<CR>
+nnoremap <Space>vd <Cmd>ViewModeDisable<CR>
+'''
