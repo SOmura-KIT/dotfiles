@@ -99,13 +99,6 @@ export class Config extends BaseConfig {
     ) as LazyMakeStateResult | undefined;
 
     return {
-      checkFiles: await fn.globpath(
-        args.denops,
-        Deno.env.get("BASE_DIR"),
-        "*",
-        1,
-        1,
-      ) as unknown as string[],
       ftplugins,
       hooksFiles,
       plugins: lazyResult?.plugins ?? [],
