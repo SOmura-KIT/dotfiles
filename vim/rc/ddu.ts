@@ -19,30 +19,53 @@ export class Config extends BaseConfig {
           startFilter: true,
         }
       },
+
       sourceOptions: {
         _: {
           matchers: [ "matcher_substring" ],
           ignoreCase: true,
         },
       },
-    })
+
+      kindOptions: {
+        _: {
+          defaultAction: "open"
+        },
+      },
+    });
+
+    args.contextBuilder.patchLocal("file", {
+      sources: [{
+        name: "file",
+        options: {
+          converters: ["converter_devicon"]
+        }
+      }],
+    });
 
     args.contextBuilder.patchLocal("file_recursive", {
       sources: [{
         name: "file_rec",
         options: {
-          converters: [ "converter_devicon"],
+          converters: ["converter_devicon"],
         },
         params: {
           ignoredDirectories: [ "node_modules", ".git", "dist"]
         },
       }],
-      kindOptions: {
-        file: {
-          defaultAction: "open",
-        },
-      },
-    })
+    });
+
+    args.contextBuilder.patchLocal("help", {
+      sources: ["help"],
+    });
+
+    args.contextBuilder.patchLocal("ripgrep", {
+      sources: ["rg"],
+    });
+
+    args.contextBuilder.patchLocal("buffer", {
+      sources: ["buffer"],
+    });
 
     return Promise.resolve();
   }
