@@ -151,7 +151,8 @@ function install_neofetch() {
 }
 
 function install_zsh() {
-  ln -s $BASE_DIR/.tmux.conf $HOME/.
+  ln -s $BASE_DIR/.zshrc $HOME/.
+  ln -s $BASE_DIR/zsh $HOME/zsh
   if ! command -v "zsh"; then
     echo 'Info: Zsh Installing'
     case "$ID" in
