@@ -191,8 +191,8 @@ mode "resize" {
 bindsym Mod4+r mode "resize"
 
 # 起動時起動
-exec --no-startup-id alacritty
-exec --no-startup-id sleep 1; firefox
+exec --no-startup-id $terminal
+exec --no-startup-id sleep 1; $browser
 exec --no-startup-id thunderbird
 exec --no-startup-id kdeconnect-app
 
