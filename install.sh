@@ -3,8 +3,8 @@ BASE_DIR="$(dirname "$SCRIPT_PATH")"
 source /etc/os-release
 
 function install_neovim() {
-  ln -s $BASE_DIR/vim $HOME/.config/nvim
-  if ! command -v "nvim"; then
+  ln -sf $BASE_DIR/vim $HOME/.config/nvim
+  if ! command -v "nvim" &>/dev/null; then
     # dpp.vimが0.10.0以上でしか動作しないため
     # neovim 0.10.0がリリースされたら、パッケージ管理システムもサジェスト
     echo 'Info: Neovim Installing'
@@ -15,8 +15,8 @@ function install_neovim() {
 }
 
 function install_vim() {
-  ln -s $BASE_DIR/vim $HOME/.vim
-  if ! command -v "vim"; then
+  ln -sf $BASE_DIR/vim $HOME/.vim
+  if ! command -v "vim" &>/dev/null; then
     echo 'Info: Vim Installing'
     case "$ID" in
       "arch")
@@ -32,12 +32,12 @@ function install_vim() {
 }
 
 function install_alacritty() {
-  ln -s $BASE_DIR/alacritty $HOME/.config/.
+  ln -sf $BASE_DIR/alacritty $HOME/.config/.
   if [ ! -d "$BASE_DIR/alacritty/alacritty-theme" ]; then
     git clone https://github.com/alacritty/alacritty-theme $BASE_DIR/alacritty/alacritty-theme
   fi
 
-  if ! command -v "alacritty"; then
+  if ! command -v "alacritty" &>/dev/null; then
     echo 'Info: Alacritty Installing'
     case "$ID" in
       "arch")
@@ -53,8 +53,8 @@ function install_alacritty() {
 }
 
 function install_i3() {
-  ln -s $BASE_DIR/i3 $HOME/.config/.
-  if ! command -v "i3"; then
+  ln -sf $BASE_DIR/i3 $HOME/.config/.
+  if ! command -v "i3" &>/dev/null; then
     echo 'Info: i3 Installing'
     case "$ID" in
       "arch")
@@ -71,8 +71,8 @@ function install_i3() {
 }
 
 function install_polybar() {
-  ln -s $BASE_DIR/polybar $HOME/.config/.
-  if ! command -v "polybar"; then
+  ln -sf $BASE_DIR/polybar $HOME/.config/.
+  if ! command -v "polybar" &>/dev/null; then
     echo 'Info: Polybar Installing'
     case "$ID" in
       "arch")
@@ -90,7 +90,7 @@ function install_polybar() {
 function install_picom() {
   # デスクトップかラップトップかでglxとxrenderをかえたいから、コピーで
   cp $BASE_DIR/picom.conf $HOME/.config/.
-  if ! command -v "picom"; then
+  if ! command -v "picom" &>/dev/null; then
     echo 'Info: Picom Installing'
     case "$ID" in
       "arch")
@@ -108,8 +108,8 @@ function install_picom() {
 }
 
 function install_tmux() {
-  ln -s $BASE_DIR/.tmux.conf $HOME/.
-  if ! command -v "tmux"; then
+  ln -sf $BASE_DIR/.tmux.conf $HOME/.
+  if ! command -v "tmux" &>/dev/null; then
     echo 'Info: Tmux Installing'
     case "$ID" in
       "arch")
@@ -134,8 +134,8 @@ function install_neofetch() {
   if [ ! -f $HOME/neofetch/config.conf ]; then
     mv $HOME/.config/neofetch/config.conf $HOME/.config/neofetch/config.conf.backup
   fi
-  ln -s $BASE_DIR/neofetch-themes/normal/ozozfetch.conf $HOME/.config/neofetch/config.conf
-  if ! command -v "neofetch"; then
+  ln -sf $BASE_DIR/neofetch-themes/normal/ozozfetch.conf $HOME/.config/neofetch/config.conf
+  if ! command -v "neofetch" &>/dev/null; then
     echo 'Info: Neofetch Installing'
     case "$ID" in
       "arch")
@@ -151,9 +151,9 @@ function install_neofetch() {
 }
 
 function install_zsh() {
-  ln -s $BASE_DIR/.zshrc $HOME/.
-  ln -s $BASE_DIR/zsh $HOME/zsh
-  if ! command -v "zsh"; then
+  ln -sf $BASE_DIR/.zshrc $HOME/.
+  ln -sf $BASE_DIR/zsh $HOME/zsh
+  if ! command -v "zsh" &>/dev/null; then
     echo 'Info: Zsh Installing'
     case "$ID" in
       "arch")
