@@ -152,7 +152,8 @@ function install_neofetch() {
 
 function install_zsh() {
   ln -sf $BASE_DIR/.zshrc $HOME/.
-  ln -sf $BASE_DIR/zsh $HOME/zsh
+  ln -sf $BASE_DIR/zsh $HOME/.
+  git clone https://github.com/yuki-yano/zeno.zsh.git $BASE_DIR/zsh/zeno
   if ! command -v "zsh" &>/dev/null; then
     echo 'Info: Zsh Installing'
     case "$ID" in

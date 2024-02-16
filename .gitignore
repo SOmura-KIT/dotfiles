@@ -1,6 +1,7 @@
 nvim/denops.vim
 alacritty/alacritty-theme/*
 neofetch-themes/*
+zsh/zeno
 i3blocks/*
 !i3blocks/config
 !i3blocks/volume-wireplumber/
