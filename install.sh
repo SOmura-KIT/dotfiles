@@ -150,6 +150,24 @@ function install_neofetch() {
   fi
 }
 
+function install_wezterm() {
+  ln -sf $BASE_DIR/.wezterm.lua $HOME/.
+  if ! command -v "zsh" &>/dev/null; then
+    echo 'Info: Wezterm Installing'
+    case "$ID" in
+      "arch")
+        echo '  $ sudo pacman -S Wezterm'
+        ;;
+      "debian")
+        echo '  $ sudo apt install Wezterm'
+        ;;
+      *)
+        echo "  use your package manager"
+    esac
+  fi
+}
+
+
 function install_zsh() {
   ln -sf $BASE_DIR/.zshrc $HOME/.
   ln -sf $BASE_DIR/zsh $HOME/.
@@ -196,6 +214,9 @@ case "$install_target" in
   "neofetch")
     install_neofetch
     ;;
+  "wezterm")
+    install_wezterm
+    ;;
   "zsh")
     install_zsh
     ;;
@@ -215,6 +236,6 @@ case "$install_target" in
     install_zsh
     ;;
   *)
-    echo '$ bash install.sh <nvim|vim|i3|polybar|picom|tmux|zsh|all>'
+    echo '$ bash install.sh <nvim|vim|i3|polybar|picom|neofetch|tmux|wezterm|zsh|all>'
     ;;
 esac
