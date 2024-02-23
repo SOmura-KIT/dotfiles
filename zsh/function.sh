@@ -45,12 +45,12 @@ tef() {
 
   if [ ! -e "${target_file}" ]; then
       echo "'${target_file}' is not exist."
-      exit 1
+      return 1
   fi
 
   if [[ ! ${target_file} =~ .+\.tex ]]; then
       echo "'${target_file}' is not tex file."
-      exit 1
+      return 1
   fi
 
   non_extension_file=${target_file%\.tex}
