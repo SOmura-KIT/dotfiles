@@ -7,6 +7,7 @@ source $HOME/zsh/source.sh
 source $HOME/zsh/bind.sh
 source $HOME/zsh/complete.sh
 source $HOME/zsh/alias.sh
+source $HOME/zsh/function.sh
 source $HOME/zsh/zeno/zeno.zsh
 
 # XWindowの起動
