@@ -55,8 +55,7 @@ tef() {
 
   non_extension_file=${target_file%\.tex}
 
-  # latexmk ${target_file}
-  platex "${target_file}"
+  latexmk ${target_file}
 
   if [ -e "${non_extension_file}.dvi" ]; then
       dvipdfmx "${non_extension_file}.dvi"
