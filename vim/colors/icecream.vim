@@ -72,10 +72,10 @@ hi Identifier       guifg=#ff00ff guibg=NONE                  gui=NONE      cter
 hi Function         guifg=#00ff00 guibg=NONE                  gui=NONE      cterm=NONE
 hi Statement        guifg=#4c4f69 guibg=NONE                  gui=bold      cterm=bold
 hi Constant         guifg=#00ffff guibg=NONE                  gui=NONE      cterm=NONE
-hi PreProc          guifg=#ffff00 guibg=NONE                  gui=NONE      cterm=NONE
+hi PreProc          guifg=#ff8c00 guibg=NONE                  gui=NONE      cterm=NONE 
 hi Type             guifg=#00ff00 guibg=NONE                  gui=bold      cterm=bold
 hi Special          guifg=#ff0000 guibg=NONE                  gui=NONE      cterm=NONE
-hi Delimiter        guifg=#ffff00 guibg=NONE                  gui=NONE      cterm=NONE
+hi Delimiter        guifg=#ff8c00 guibg=NONE                  gui=NONE      cterm=NONE
 hi Directory        guifg=#00ffff guibg=NONE                  gui=NONE      cterm=NONE
 hi Conceal          guifg=#6c6c6c guibg=NONE                  gui=NONE      cterm=NONE
 hi Ignore           guifg=NONE    guibg=NONE                  gui=NONE      ctermfg=NONE ctermbg=NONE cterm=NONE
@@ -411,4 +411,3 @@ endif
 " Color: fgDiffB     #000000        16             black
 " Color: bgDiffC8    #5F87AF        67             darkblue
 " Color: bgDiffD8    #AF5FAF        133            darkmagenta
-" vim: et ts=8 sw=2 sts=2
