@@ -8,7 +8,7 @@ source $HOME/zsh/bind.sh
 source $HOME/zsh/complete.sh
 source $HOME/zsh/alias.sh
 source $HOME/zsh/function.sh
-source $HOME/zsh/zeno/zeno.zsh
+# source $HOME/zsh/zeno/zeno.zsh
 
 # XWindowの起動
 if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
