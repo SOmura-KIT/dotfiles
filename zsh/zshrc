@@ -10,19 +10,6 @@ source $HOME/zsh/alias.sh
 source $HOME/zsh/function.sh
 # source $HOME/zsh/zeno/zeno.zsh
 
-# XWindowの起動
-if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
-  echo -n "Start XWindow? [Y/n] (default: Yes): "
-  read ans
-  case "$ans" in
-    [Nn]* )
-      ;;
-    * )
-      exec startx
-      ;;
-  esac
-fi
-
 if [[ -d "$HOME/miniforge3" ]]; then
   __conda_setup="$($HOME/miniforge3/bin/conda 'shell.zsh' 'hook' 2> /dev/null)"
   if [ $? -eq 0 ]; then
