@@ -1,7 +1,7 @@
 # Distro env
 source /etc/os-release
 
-source $HOME/zsh/p10k.sh
+# source $HOME/zsh/p10k.sh
 source $HOME/zsh/path.sh
 source $HOME/zsh/source.sh
 source $HOME/zsh/bind.sh
