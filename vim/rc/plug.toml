@@ -20,4 +20,4 @@ nnoremap <Space>vd <Cmd>ViewModeDisable<CR>
 '''
 
 [[plugins]]
-repo = 'lilydjwg/colorlizer'
+repo = 'lilydjwg/colorizer'
