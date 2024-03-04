@@ -21,3 +21,4 @@ nnoremap <Space>vd <Cmd>ViewModeDisable<CR>
 
 [[plugins]]
 repo = 'lilydjwg/colorizer'
+on_ft = [ 'css' ]
